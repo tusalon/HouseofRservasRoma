@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "5353066647";
+﻿const WHATSAPP_NUMBER = "5354066204";
 
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -79,3 +79,4 @@ copyButton?.addEventListener("click", async () => {
     formStatus.textContent = "No se pudo copiar automaticamente. Selecciona el texto generado en WhatsApp.";
   }
 });
+
