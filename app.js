@@ -44,18 +44,11 @@ installButton?.addEventListener("click", async () => {
 function buildRequestText() {
   const data = new FormData(form);
   const lines = [
-    "Solicitud para crear negocio en RservasRoma",
+    "Solicitud para crear cliente en RservasRoma",
     "",
-    `Negocio: ${data.get("negocio") || ""}`,
-    `Tipo: ${data.get("tipo") || ""}`,
+    `Nombre del salón: ${data.get("salon") || ""}`,
     `WhatsApp: ${data.get("whatsapp") || ""}`,
-    `Instagram: ${data.get("instagram") || ""}`,
-    `Servicios: ${data.get("servicios") || ""}`,
-    `Profesionales: ${data.get("profesionales") || ""}`,
-    `Horarios: ${data.get("horarios") || ""}`,
-    `Anticipo: ${data.get("anticipo") || ""}`,
-    `Plan de interes: ${data.get("plan") || ""}`,
-    `Notas: ${data.get("notas") || ""}`
+    `Correo electrónico: ${data.get("email") || ""}`
   ];
 
   return lines.join("\n");
@@ -76,7 +69,7 @@ copyButton?.addEventListener("click", async () => {
     await navigator.clipboard.writeText(text);
     formStatus.textContent = "Solicitud copiada.";
   } catch {
-    formStatus.textContent = "No se pudo copiar automaticamente. Selecciona el texto generado en WhatsApp.";
+    formStatus.textContent = "No se pudo copiar automáticamente. Selecciona el texto generado en WhatsApp.";
   }
 });
 
