@@ -213,17 +213,108 @@
       </div>
     </section>
 
-    <section class="section split" id="guia">
-      <div>
-        <p class="eyebrow">Guía visual</p>
-        <h2>Del primer mensaje al negocio funcionando.</h2>
+    <section class="section guide-section" id="guia">
+      <div class="section-heading guide-heading">
+        <p class="eyebrow">Guia visual</p>
+        <h2>Hojea RservasRoma como una revista de presentacion.</h2>
+        <p>Una explicacion corta, visual y facil de compartir con una futura clienta antes de crear su negocio.</p>
       </div>
-      <ol class="timeline">
-        <li><strong>1. Recogemos los datos.</strong><span>Nombre, logo, servicios, profesionales, horarios, reglas y colores.</span></li>
-        <li><strong>2. Configuramos el negocio.</strong><span>Se crea la app, el panel admin y los enlaces para compartir.</span></li>
-        <li><strong>3. Probamos el flujo.</strong><span>Reservas de clienta, avisos, permisos y disponibilidad.</span></li>
-        <li><strong>4. Se lanza.</strong><span>La admin recibe su acceso y empieza a trabajar con su agenda digital.</span></li>
-      </ol>
+      <div class="book-shell" aria-label="Guia visual de RservasRoma">
+        <div class="book-topbar">
+          <span class="book-label">Guia RservasRoma</span>
+          <span class="book-counter" id="bookCounter">Pagina 1 de 6</span>
+        </div>
+        <div class="book-viewport" id="bookViewport">
+          <article class="book-page active" data-title="Inicio">
+            <div class="book-page-copy">
+              <span class="page-number">01</span>
+              <h3>La casa de las reservas del salon.</h3>
+              <p>RservasRoma convierte el negocio en una experiencia organizada: clientas reservando, admin controlando y profesionales trabajando con reglas claras.</p>
+            </div>
+            <div class="book-visual book-visual-phone">
+              <div class="book-phone">
+                <span>RservasRoma</span>
+                <strong>Reserva lista</strong>
+                <p>Servicio, profesional, hora y confirmacion.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-page" data-title="Cliente">
+            <div class="book-page-copy">
+              <span class="page-number">02</span>
+              <h3>La clienta reserva sin escribirte a cada rato.</h3>
+              <p>Elige servicio, profesional, fecha, hora y datos de contacto. Si el negocio cobra anticipo, la cita queda pendiente hasta confirmacion.</p>
+            </div>
+            <div class="book-visual book-flow">
+              <span>Servicio</span>
+              <span>Profesional</span>
+              <span>Horario</span>
+              <span>Reserva</span>
+            </div>
+          </article>
+
+          <article class="book-page" data-title="Admin">
+            <div class="book-page-copy">
+              <span class="page-number">03</span>
+              <h3>La admin ve agenda, detalles y acciones.</h3>
+              <p>Puede crear citas manuales, editar duracion, marcar completadas, canceladas, ausencias, cobro real, deposito y metodo de pago.</p>
+            </div>
+            <div class="book-visual agenda-preview">
+              <div><b>9:00 AM</b><span>Ariadna - Retiro</span></div>
+              <div><b>1:00 PM</b><span>Disponible</span></div>
+              <div><b>4:30 PM</b><span>Pendiente anticipo</span></div>
+            </div>
+          </article>
+
+          <article class="book-page" data-title="Recordatorios">
+            <div class="book-page-copy">
+              <span class="page-number">04</span>
+              <h3>Recordatorios que reducen olvidos.</h3>
+              <p>Mensajes preparados para WhatsApp, avisos de pago pendiente, notificaciones para la admin y seguimiento de ausencias.</p>
+            </div>
+            <div class="book-visual reminder-stack">
+              <span>Manana tienes cita</span>
+              <span>Anticipo pendiente</span>
+              <span>Turno liberado</span>
+            </div>
+          </article>
+
+          <article class="book-page" data-title="Marca">
+            <div class="book-page-copy">
+              <span class="page-number">05</span>
+              <h3>La app se viste como cada negocio.</h3>
+              <p>Logo, colores, imagen de fondo, pais, telefono, servicios, profesionales, horarios y mensajes personalizados.</p>
+            </div>
+            <div class="book-visual brand-board">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>Tu marca</strong>
+            </div>
+          </article>
+
+          <article class="book-page" data-title="Lanzamiento">
+            <div class="book-page-copy">
+              <span class="page-number">06</span>
+              <h3>De la idea al salon funcionando.</h3>
+              <p>Recogemos nombre del salon, WhatsApp y correo. Luego se configura el cliente, se prueba el flujo y se entrega listo para compartir.</p>
+              <a class="button primary book-cta" href="#crear">Crear mi negocio</a>
+            </div>
+            <div class="book-visual launch-card">
+              <strong>Listo para reservar</strong>
+              <span>Android</span>
+              <span>iOS</span>
+              <span>Web</span>
+            </div>
+          </article>
+        </div>
+        <div class="book-controls" aria-label="Controles de la guia">
+          <button class="book-btn" type="button" id="bookPrev" aria-label="Pagina anterior">Anterior</button>
+          <div class="book-dots" id="bookDots" aria-label="Paginas de la guia"></div>
+          <button class="book-btn" type="button" id="bookNext" aria-label="Pagina siguiente">Siguiente</button>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="faq">
