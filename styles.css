@@ -333,7 +333,35 @@ h3 { margin: 0 0 10px; font-size: 21px; }
 }
 .screenshot-gallery {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 22px;
+}
+.gallery-group {
+  display: grid;
+  gap: 12px;
+}
+.gallery-group-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+.gallery-group-heading span {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 950;
+}
+.gallery-group-heading p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+  text-align: right;
+}
+.gallery-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 .screenshot-gallery figure {
@@ -718,7 +746,7 @@ textarea { resize: vertical; }
     padding: 30px 22px;
   }
   .feature-grid, .pricing-grid, .screens { grid-template-columns: 1fr; }
-  .screenshot-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .gallery-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .book-viewport { min-height: 760px; }
   .book-page {
     grid-template-columns: 1fr;
@@ -820,7 +848,14 @@ textarea { resize: vertical; }
   .book-shot-pair img {
     max-height: 320px;
   }
-  .screenshot-gallery {
+  .gallery-group-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+  .gallery-group-heading p {
+    text-align: left;
+  }
+  .gallery-row {
     display: flex;
     gap: 12px;
     overflow-x: auto;

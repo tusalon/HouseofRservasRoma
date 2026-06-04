@@ -56,7 +56,7 @@ function renderBookDots() {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = "book-dot";
-    dot.setAttribute("aria-label", `Ir a ${page.dataset.title || `pagina ${index + 1}`}`);
+    dot.setAttribute("aria-label", `Ir a ${page.dataset.title || `página ${index + 1}`}`);
     dot.addEventListener("click", () => showBookPage(index));
     bookDots.appendChild(dot);
   });
@@ -76,7 +76,7 @@ function showBookPage(index) {
   });
 
   if (bookCounter) {
-    bookCounter.textContent = `Pagina ${currentBookPage + 1} de ${bookPages.length}`;
+    bookCounter.textContent = `Página ${currentBookPage + 1} de ${bookPages.length}`;
   }
 }
 
