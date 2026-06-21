@@ -492,9 +492,12 @@ h3 { margin: 0 0 10px; font-size: 21px; }
 .price-card { position: relative; }
 .featured-price { border-color: var(--brand); box-shadow: var(--shadow); }
 .price { font-size: 28px; font-weight: 950; margin: 12px 0; }
+.price-period { font-size: 16px; font-weight: 400; color: var(--muted); }
+.price-desc { font-size: 14px; color: var(--muted); margin: -6px 0 14px; }
 .price-card ul { padding-left: 18px; margin-bottom: 0; }
 .price-card li { margin: 10px 0; }
 .price-cta { width: 100%; margin-top: 20px; }
+.pricing-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 28px; }
 
 .timeline { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
 .timeline li { border-left: 4px solid var(--brand); background: var(--soft); border-radius: var(--radius); padding: 18px; }
