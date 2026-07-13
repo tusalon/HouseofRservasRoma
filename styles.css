@@ -808,6 +808,7 @@ details p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size:
 .footer-col h4 { margin: 0 0 16px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: white; }
 .footer-col a { display: block; color: #9CA3AF; margin-bottom: 10px; font-size: 14px; font-weight: 500; transition: color 0.2s; }
 .footer-col a:hover { color: white; }
+.footer-col span { display: block; color: #9CA3AF; font-size: 14px; font-weight: 500; }
 .footer-bottom {
   max-width: 1180px;
   margin: 36px auto 0;
