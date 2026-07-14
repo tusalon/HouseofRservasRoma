@@ -647,10 +647,33 @@ details p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size:
     box-shadow: var(--shadow);
   }
   .nav-links.open { display: flex; }
-  .platform-grid { grid-template-columns: 1fr; }
-  .audience-grid { grid-template-columns: 1fr; }
-  .feature-grid { grid-template-columns: 1fr; }
-  .gallery-row { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+  /* Menos scroll en mobile: secciones más compactas sin quitar contenido */
+  .section { padding: 44px 20px; }
+  .audience-section, .form-section { padding: 44px 20px; }
+  .section-heading { margin-bottom: 24px; }
+
+  .platform-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .platform-grid article { min-height: 0; padding: 16px; gap: 8px; }
+  .audience-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .audience-grid article { min-height: 0; padding: 14px; }
+  .feature-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .feature { padding: 16px; }
+  .testimonios-grid { gap: 12px; }
+  .testimonio-card { padding: 18px; }
+
+  /* Galería: fila horizontal deslizable en vez de apilada */
+  .gallery-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .screenshot-gallery figure { flex: 0 0 40%; scroll-snap-align: start; }
+  .screenshot-gallery { gap: 20px; }
+
   .footer-inner { grid-template-columns: 1fr; }
   .conversion-list { grid-template-columns: 1fr; }
   .urgencia-inner { padding: 36px 24px; }
