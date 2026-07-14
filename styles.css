@@ -456,6 +456,44 @@ h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: var(--ink); }
 .testimonio-author span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
 
 
+/* ── PRECIO ── */
+.price-single {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid var(--brand);
+  border-radius: 20px;
+  background: linear-gradient(160deg, #fff8fc 0%, white 55%);
+  box-shadow: 0 0 0 1px var(--brand), var(--shadow-lg);
+  padding: 40px;
+}
+.price-single-tag {
+  display: inline-flex;
+  background: #d1fae5;
+  border: 1px solid #6ee7b7;
+  color: #065f46;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.price-single-amount { margin: 0 0 8px; color: var(--ink); }
+.price-single-amount strong { font-size: 44px; font-weight: 900; }
+.price-single-amount span { font-size: 18px; font-weight: 600; color: var(--muted); margin-left: 4px; }
+.price-single-note { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+.price-single-note a { color: var(--brand); font-weight: 700; text-decoration: underline; }
+.price-single-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+.price-single-list li { color: var(--ink-soft); font-weight: 500; font-size: 15px; line-height: 1.5; }
+.price-single-cta { width: 100%; }
+
 /* ── FAQ ── */
 .faq-list { display: grid; gap: 8px; }
 details {
@@ -552,6 +590,37 @@ details p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size:
 }
 .contact-form input::placeholder { color: #9CA3AF; }
 .form-status { margin-top: 12px; font-weight: 700; font-size: 14px; color: var(--brand); }
+
+.platform-toggle { display: flex; gap: 10px; }
+.platform-toggle input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.platform-option {
+  flex: 1;
+  text-align: center;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 9999px;
+  background: var(--soft);
+  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.platform-toggle input[type="radio"]:checked + .platform-option {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+}
+.platform-toggle input[type="radio"]:focus-visible + .platform-option {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
 
 /* ── FOOTER ── */
 .site-footer {

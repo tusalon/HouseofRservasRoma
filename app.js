@@ -48,7 +48,8 @@ function buildRequestText() {
     "",
     `Nombre del salón: ${data.get("salon") || ""}`,
     `WhatsApp: ${data.get("whatsapp") || ""}`,
-    `Correo electrónico: ${data.get("email") || ""}`
+    `Correo electrónico: ${data.get("email") || ""}`,
+    `Sistema operativo: ${data.get("plataforma") || ""}`
   ];
 
   return lines.join("\n");
