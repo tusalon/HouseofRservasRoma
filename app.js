@@ -1,4 +1,4 @@
-﻿const WHATSAPP_NUMBER = "5354066204";
+﻿const WHATSAPP_NUMBER = "15154650340";
 
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
