@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crea tu app de reservas — RservasRoma</title>
+  <meta name="description" content="Déjanos 4 datos y en 24–72 h tu salón tiene su app de reservas lista. 15 días de prueba gratis.">
+  <meta name="theme-color" content="#e83387">
+  <link rel="icon" href="icons/icon-192x192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+  <style>
+    :root {
+      --brand: #e83387;
+      --brand-dark: #c0166a;
+      --ink: #111827;
+      --muted: #6B7280;
+      --line: #E5E7EB;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      background: linear-gradient(160deg, #fff 0%, #fdf2f8 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+    }
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px 24px 24px;
+      box-shadow: 0 12px 48px rgba(232, 51, 135, 0.12);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .brand img { width: 44px; height: 44px; border-radius: 12px; }
+    .brand strong { display: block; font-size: 17px; }
+    .brand small { color: var(--muted); font-size: 12px; }
+    h1 { font-size: 22px; line-height: 1.25; margin: 0 0 6px; }
+    .sub { color: var(--muted); font-size: 14px; margin: 0 0 22px; line-height: 1.5; }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    input[type="text"], input[type="email"], input[type="tel"] {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-family: inherit;
+      margin-bottom: 16px;
+    }
+    input:focus { outline: 2px solid var(--brand); outline-offset: -1px; border-color: var(--brand); }
+    .platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px; }
+    .platforms input { position: absolute; opacity: 0; pointer-events: none; }
+    .platforms label {
+      margin: 0;
+      text-align: center;
+      padding: 12px 8px;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .platforms input:checked + label {
+      border-color: var(--brand);
+      background: rgba(232, 51, 135, 0.07);
+      color: var(--brand-dark);
+      font-weight: 700;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: inherit;
+      color: #fff;
+      background: var(--brand);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    button:disabled { opacity: 0.6; cursor: default; }
+    .status { font-size: 13px; text-align: center; margin: 14px 0 0; min-height: 18px; }
+    .status.ok { color: #047857; }
+    .status.err { color: #b91c1c; }
+    .perks { list-style: none; padding: 0; margin: 20px 0 0; border-top: 1px solid var(--line); padding-top: 16px; }
+    .perks li { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+    .done { text-align: center; }
+    .done .tick { font-size: 44px; display: block; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">
+      <img src="icons/icon-192x192.png" alt="RservasRoma">
+      <span>
+        <strong>RservasRoma</strong>
+        <small>+300 salones activos</small>
+      </span>
+    </div>
+
+    <div id="vistaForm">
+      <h1>Crea tu app de reservas gratis</h1>
+      <p class="sub">Solo 4 datos. Te escribimos por WhatsApp y en 24–72 h tu salón ya recibe reservas.</p>
+
+      <form id="altaForm" novalidate>
+        <label for="salon">Nombre de tu salón</label>
+        <input id="salon" name="salon" type="text" required placeholder="Ej: Nails by Roma" autocomplete="organization">
+
+        <label for="whatsapp">Tu WhatsApp</label>
+        <input id="whatsapp" name="whatsapp" type="tel" required inputmode="tel" placeholder="+53 5..." autocomplete="tel">
+
+        <label for="email">Tu correo</label>
+        <input id="email" name="email" type="email" required placeholder="correo@ejemplo.com" autocomplete="email">
+
+        <label>¿En qué celular vas a usarla?</label>
+        <div class="platforms">
+          <input type="radio" id="p-android" name="plataforma" value="android" required>
+          <label for="p-android">🤖 Android</label>
+          <input type="radio" id="p-ios" name="plataforma" value="ios">
+          <label for="p-ios">🍎 iPhone</label>
+        </div>
+
+        <button type="submit" id="enviar">Quiero mi app 🚀</button>
+        <p class="status" id="estado" role="status"></p>
+      </form>
+
+      <ul class="perks">
+        <li>✓ 15 días de prueba, sin pagar nada</li>
+        <li>✓ Sin tarjeta de crédito</li>
+        <li>✓ Soporte directo por WhatsApp</li>
+      </ul>
+    </div>
+
+    <div id="vistaOk" class="done" hidden>
+      <span class="tick">🎉</span>
+      <h1>¡Solicitud recibida!</h1>
+      <p class="sub">Ya tenemos tus datos. Te escribimos por WhatsApp en pocas horas para terminar de configurar tu salón.</p>
+      <a href="#" id="waLink" style="display:block"><button type="button">Escribirnos ahora por WhatsApp</button></a>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // Reusa guardarSolicitudRservas() de app.js para no tener dos copias de la
+    // logica de guardado. app.js tolera que no existan los nodos de la landing
+    // (usa ?. en todos sus selectores), asi que carga sin romper en esta pagina.
+    const WA = "15154650340";
+    const altaForm = document.querySelector("#altaForm");
+    const estado = document.querySelector("#estado");
+    const boton = document.querySelector("#enviar");
+
+    altaForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const datos = {
+        salon: altaForm.salon.value.trim(),
+        whatsapp: altaForm.whatsapp.value.trim(),
+        email: altaForm.email.value.trim(),
+        plataforma: altaForm.querySelector('input[name="plataforma"]:checked')?.value || "",
+        origen: "alta-corta"
+      };
+
+      if (!datos.salon || !datos.whatsapp || !datos.email || !datos.plataforma) {
+        estado.className = "status err";
+        estado.textContent = "Completa los 4 datos para continuar.";
+        return;
+      }
+
+      boton.disabled = true;
+      estado.className = "status";
+      estado.textContent = "Enviando…";
+
+      // Aca si se espera la respuesta: esta pagina muestra una pantalla de
+      // confirmacion propia en vez de saltar a WhatsApp, asi que no hay gesto
+      // de usuario que perder y conviene avisar si algo falla de verdad.
+      try {
+        const res = await window.guardarSolicitudRservas(datos);
+        if (!res.ok) throw new Error(await res.text());
+
+        const texto = [
+          "Solicitud para crear cliente en RservasRoma",
+          "",
+          `Nombre del salón: ${datos.salon}`,
+          `WhatsApp: ${datos.whatsapp}`,
+          `Correo electrónico: ${datos.email}`,
+          `Sistema operativo: ${datos.plataforma === "ios" ? "iOS" : "Android"}`
+        ].join("\n");
+
+        document.querySelector("#waLink").href =
+          `https://wa.me/${WA}?text=${encodeURIComponent(texto)}`;
+        document.querySelector("#vistaForm").hidden = true;
+        document.querySelector("#vistaOk").hidden = false;
+      } catch (err) {
+        console.warn(err);
+        boton.disabled = false;
+        estado.className = "status err";
+        estado.textContent = "No se pudo enviar. Escríbenos por WhatsApp al +1 515 465 0340.";
+      }
+    });
+  </script>
+</body>
+</html>
