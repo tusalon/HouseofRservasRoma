@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-19T19:40:10Z",
+  "title": "Design System: RservasRoma",
+  "extensions": {
+    "colorMeta": {
+      "esmalte": {
+        "role": "primary",
+        "displayName": "Fucsia de Esmalte",
+        "canonical": "#e83387",
+        "tonalRamp": [
+          "#450824",
+          "#790e40",
+          "#ae145b",
+          "#e21976",
+          "#eb4b95",
+          "#f17fb4",
+          "#f7b4d3",
+          "#fce8f2"
+        ]
+      },
+      "esmalte-cta": {
+        "role": "primary",
+        "displayName": "Fucsia de Acción",
+        "canonical": "#d4227a",
+        "tonalRamp": [
+          "#420b26",
+          "#741343",
+          "#a61b60",
+          "#d9237d",
+          "#e3529a",
+          "#eb85b7",
+          "#f3b7d5",
+          "#fbe9f2"
+        ]
+      },
+      "esmalte-ink": {
+        "role": "primary",
+        "displayName": "Fucsia de Tinta",
+        "canonical": "#c0166a",
+        "tonalRamp": [
+          "#450826",
+          "#790e43",
+          "#ad1460",
+          "#e21a7d",
+          "#ea4b9a",
+          "#f080b7",
+          "#f6b4d5",
+          "#fce8f2"
+        ]
+      },
+      "esmalte-on-dark": {
+        "role": "primary",
+        "displayName": "Fucsia sobre Oscuro",
+        "canonical": "#f472b6",
+        "tonalRamp": [
+          "#470628",
+          "#7d0a46",
+          "#b30e64",
+          "#e91283",
+          "#f1459f",
+          "#f57bbb",
+          "#f9b1d7",
+          "#fde7f3"
+        ]
+      },
+      "ciruela": {
+        "role": "secondary",
+        "displayName": "Ciruela",
+        "canonical": "#2d0a1f",
+        "tonalRamp": [
+          "#3f0e2b",
+          "#6e194c",
+          "#9e236d",
+          "#ce2e8e",
+          "#db5ba8",
+          "#e58bc1",
+          "#f0bada",
+          "#faeaf4"
+        ]
+      },
+      "ciruela-profunda": {
+        "role": "secondary",
+        "displayName": "Ciruela Profunda",
+        "canonical": "#1a0a2e",
+        "tonalRamp": [
+          "#240e3f",
+          "#3f186f",
+          "#5a229f",
+          "#752dce",
+          "#945adb",
+          "#b38ae6",
+          "#d2baf0",
+          "#f1eafa"
+        ]
+      },
+      "verde-whatsapp": {
+        "role": "tertiary",
+        "displayName": "Verde WhatsApp",
+        "canonical": "#25D366",
+        "tonalRamp": [
+          "#0b411f",
+          "#147337",
+          "#1da44f",
+          "#26d667",
+          "#55e189",
+          "#86eaab",
+          "#b8f2ce",
+          "#e9fbf0"
+        ]
+      },
+      "verde-exito": {
+        "role": "tertiary",
+        "displayName": "Éxito",
+        "canonical": "#047857",
+        "tonalRamp": [
+          "#024a36",
+          "#04825f",
+          "#06bb87",
+          "#08f3b0",
+          "#3df9c3",
+          "#76fad5",
+          "#aefce6",
+          "#e6fef7"
+        ]
+      },
+      "rojo-error": {
+        "role": "tertiary",
+        "displayName": "Error",
+        "canonical": "#b91c1c",
+        "tonalRamp": [
+          "#420a0a",
+          "#751212",
+          "#a81919",
+          "#da2121",
+          "#e55151",
+          "#ec8484",
+          "#f4b6b6",
+          "#fce9e9"
+        ]
+      },
+      "ambar-estrella": {
+        "role": "tertiary",
+        "displayName": "Ámbar Estrella",
+        "canonical": "#f59e0b",
+        "tonalRamp": [
+          "#492f03",
+          "#815305",
+          "#b97708",
+          "#f19b0a",
+          "#f7b23f",
+          "#f9c977",
+          "#fcdfaf",
+          "#fef5e7"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#111827",
+        "tonalRamp": [
+          "#172135",
+          "#293a5e",
+          "#3b5386",
+          "#4c6caf",
+          "#738dc2",
+          "#9caed4",
+          "#c5cfe6",
+          "#edf0f7"
+        ]
+      },
+      "tinta-suave": {
+        "role": "neutral",
+        "displayName": "Tinta Suave",
+        "canonical": "#374151",
+        "tonalRamp": [
+          "#1f252e",
+          "#374050",
+          "#4e5c73",
+          "#667896",
+          "#8896ae",
+          "#aab5c6",
+          "#cdd3dd",
+          "#f0f2f5"
+        ]
+      },
+      "gris-apagado": {
+        "role": "neutral",
+        "displayName": "Gris Apagado",
+        "canonical": "#6B7280",
+        "tonalRamp": [
+          "#23252a",
+          "#3d4149",
+          "#585e69",
+          "#727a89",
+          "#9298a4",
+          "#b2b6be",
+          "#d1d4d9",
+          "#f1f2f3"
+        ]
+      },
+      "linea": {
+        "role": "neutral",
+        "displayName": "Línea",
+        "canonical": "#E5E7EB",
+        "tonalRamp": [
+          "#21252b",
+          "#3b404c",
+          "#545c6d",
+          "#6d788e",
+          "#8e96a8",
+          "#afb5c1",
+          "#d0d3db",
+          "#f1f2f4"
+        ]
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#262626",
+          "#434343",
+          "#616161",
+          "#7e7e7e",
+          "#9b9b9b",
+          "#b8b8b8",
+          "#d5d5d5",
+          "#f2f2f2"
+        ]
+      },
+      "papel-suave": {
+        "role": "neutral",
+        "displayName": "Papel Suave",
+        "canonical": "#F9FAFB",
+        "tonalRamp": [
+          "#1f262e",
+          "#364351",
+          "#4d6174",
+          "#657e97",
+          "#879baf",
+          "#aab8c6",
+          "#cdd5dd",
+          "#f0f2f5"
+        ]
+      },
+      "gris-footer": {
+        "role": "neutral",
+        "displayName": "Gris Footer",
+        "canonical": "#9CA3AF",
+        "tonalRamp": [
+          "#22252a",
+          "#3c424b",
+          "#565e6b",
+          "#707a8b",
+          "#9098a5",
+          "#b0b6c0",
+          "#d1d4da",
+          "#f1f2f4"
+        ]
+      },
+      "vidriera": {
+        "role": "secondary",
+        "displayName": "Vidriera",
+        "canonical": "#fdf0f7",
+        "tonalRamp": [
+          "#440929",
+          "#771047",
+          "#aa1766",
+          "#de1e85",
+          "#e74ea1",
+          "#ee82bc",
+          "#f5b5d8",
+          "#fce8f3"
+        ]
+      },
+      "vidriera-hondo": {
+        "role": "secondary",
+        "displayName": "Vidriera Honda",
+        "canonical": "#f5d0e8",
+        "tonalRamp": [
+          "#3f0d2e",
+          "#6f1850",
+          "#9f2273",
+          "#cf2c96",
+          "#dc5aae",
+          "#e68ac6",
+          "#f0badd",
+          "#fbeaf5"
+        ]
+      },
+      "aviso-fondo": {
+        "role": "tertiary",
+        "displayName": "Aviso Fondo",
+        "canonical": "#d1fae5",
+        "tonalRamp": [
+          "#074526",
+          "#0d7a42",
+          "#13ae5f",
+          "#19e37b",
+          "#4aeb99",
+          "#7ff1b7",
+          "#b3f7d4",
+          "#e8fcf2"
+        ]
+      },
+      "aviso-borde": {
+        "role": "tertiary",
+        "displayName": "Aviso Borde",
+        "canonical": "#6ee7b7",
+        "tonalRamp": [
+          "#0b422c",
+          "#13744d",
+          "#1ba66f",
+          "#24d890",
+          "#53e3aa",
+          "#85ebc2",
+          "#b7f3db",
+          "#e9fbf4"
+        ]
+      },
+      "aviso-texto": {
+        "role": "tertiary",
+        "displayName": "Aviso Texto",
+        "canonical": "#065f46",
+        "tonalRamp": [
+          "#054835",
+          "#087f5d",
+          "#0bb686",
+          "#0fecae",
+          "#43f3c2",
+          "#79f7d3",
+          "#b0fae5",
+          "#e7fdf7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Solo el h1 del hero. En móvil baja a clamp(36px, 10vw, 52px)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Los h2 de sección. Son frases completas, no etiquetas."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3 de tarjeta y títulos del FAQ."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Párrafos. El texto del hero sube a 18px, con medida limitada a 600px."
+      },
+      "body-sm": {
+        "displayName": "Body SM",
+        "purpose": "El tamaño más usado del sistema: tarjetas, menú, footer, chips, pies de foto."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Chips de dato y subtítulo de marca. Mayúsculas solo en cadenas cortas."
+      }
+    },
+    "shadows": [
+      {
+        "name": "reposo",
+        "value": "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)",
+        "purpose": "El borde apenas despegado de campos y botones secundarios."
+      },
+      {
+        "name": "ambiental",
+        "value": "0 4px 24px rgba(0,0,0,0.08)",
+        "purpose": "Tarjetas en hover y el menú desplegable móvil. Sin dirección marcada, como luz de local."
+      },
+      {
+        "name": "elevada",
+        "value": "0 12px 48px rgba(0,0,0,0.12)",
+        "purpose": "Tarjeta de precio y tarjeta de alta. Lo más alto que sube algo en este sistema."
+      },
+      {
+        "name": "halo-accion",
+        "value": "0 4px 20px rgba(232,51,135,0.20)",
+        "purpose": "SOLO bajo botones primarios e iconos de acción. Significa 'esto se toca'. Crece a 0 8px 28px en hover."
+      },
+      {
+        "name": "halo-whatsapp",
+        "value": "0 6px 20px -4px rgba(6,95,70,0.45)",
+        "purpose": "El botón flotante. Verde con desplazamiento, nunca halo de offset cero."
+      }
+    ],
+    "motion": [
+      {
+        "name": "estado",
+        "value": "0.2s",
+        "purpose": "Duración de todo cambio de estado: color, borde, transform, sombra."
+      },
+      {
+        "name": "entrada",
+        "value": "0.7s cubic-bezier(.16,1,.3,1)",
+        "purpose": "La aparición de secciones al hacer scroll. Ease-out exponencial, un solo momento por sección."
+      },
+      {
+        "name": "marquee",
+        "value": "24s linear infinite",
+        "purpose": "El bucle de la franja de datos. Obligatorio acompañarlo de un botón de pausa."
+      },
+      {
+        "name": "regla-reduced-motion",
+        "value": "@media (prefers-reduced-motion: no-preference)",
+        "purpose": "La animación se declara DENTRO de no-preference, con el estado visible por defecto: quien pide menos movimiento ve el contenido, no una página en blanco."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "md",
+        "value": "900px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "La acción principal. Fucsia de Acción con texto blanco y halo debajo.",
+      "html": "<button class=\"ds-btn-primary\">Quiero mi app — 15 días gratis</button>",
+      "css": ".ds-btn-primary { background: #d4227a; color: #fff; font: 700 15px/1 Inter, system-ui, sans-serif; padding: 13px 24px; border: 2px solid transparent; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 20px rgba(232,51,135,0.20); transition: background .2s, color .2s, border-color .2s, transform .2s, box-shadow .2s; } .ds-btn-primary:hover { background: #c0166a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,51,135,0.20); } .ds-btn-primary:focus-visible { outline: 3px solid #c0166a; outline-offset: 3px; } .ds-btn-primary[disabled] { opacity: .65; cursor: progress; transform: none; box-shadow: none; }"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "La acción alternativa. Papel con borde fucsia; se rellena con el tinte al 8% en hover.",
+      "html": "<button class=\"ds-btn-secondary\">Ver la app por dentro</button>",
+      "css": ".ds-btn-secondary { background: #fff; color: #c0166a; font: 700 15px/1 Inter, system-ui, sans-serif; padding: 13px 24px; border: 2px solid #e83387; border-radius: 12px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04); transition: background .2s, border-color .2s, transform .2s; } .ds-btn-secondary:hover { background: rgba(232,51,135,0.08); border-color: #c0166a; transform: translateY(-2px); } .ds-btn-secondary:focus-visible { outline: 3px solid #c0166a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Campo de formulario",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "48px de alto mínimo. El anillo de foco solo aparece por teclado.",
+      "html": "<label class=\"ds-field\"><span>Nombre del salón</span><input class=\"ds-input\" placeholder=\"Ej: Nails by Roma\"></label>",
+      "css": ".ds-field { display: grid; gap: 7px; font: 700 13px/1 Inter, system-ui, sans-serif; color: #374151; } .ds-input { width: 100%; min-height: 48px; padding: 13px 14px; font: 400 15px/1.4 Inter, system-ui, sans-serif; color: #111827; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; transition: border-color .2s, box-shadow .2s; } .ds-input::placeholder { color: #6B7280; } .ds-input:focus-visible { outline: 3px solid #c0166a; outline-offset: 2px; border-color: #c0166a; background: #fff; } .ds-input:focus:not(:focus-visible) { outline: none; border-color: #c0166a; background: #fff; }"
+    },
+    {
+      "name": "Tarjeta de función",
+      "kind": "card",
+      "refersTo": "card-feature",
+      "description": "Plana en reposo. En hover: borde fucsia, sombra ambiental y subida de 2px. Nunca se anida.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-card-num\">01</span><h3>Reservas online 24/7</h3><p>La clienta elige servicio, profesional, fecha y hora según la disponibilidad real del negocio.</p></article>",
+      "css": ".ds-card { background: #fff; border: 1px solid #E5E7EB; border-radius: 12px; padding: 24px; transition: border-color .2s, transform .2s, box-shadow .2s; } .ds-card:hover { border-color: #e83387; transform: translateY(-2px); box-shadow: 0 4px 24px rgba(0,0,0,0.08); } .ds-card-num { display: inline-grid; place-items: center; width: 40px; height: 40px; margin-bottom: 16px; background: #d4227a; color: #fff; border-radius: 10px; font: 800 13px/1 Inter, system-ui, sans-serif; box-shadow: 0 4px 12px rgba(232,51,135,0.20); } .ds-card h3 { margin: 0 0 8px; font: 700 18px/1.3 Inter, system-ui, sans-serif; color: #111827; } .ds-card p { margin: 0; font: 400 14px/1.6 Inter, system-ui, sans-serif; color: #6B7280; }"
+    },
+    {
+      "name": "Chip de dato",
+      "kind": "chip",
+      "refersTo": "chip-dato",
+      "description": "Los bloques de la franja de pruebas. Si se mueven en bucle, el botón de pausa es obligatorio.",
+      "html": "<span class=\"ds-chip\">+340 negocios activos</span>",
+      "css": ".ds-chip { display: grid; place-items: center; min-height: 72px; padding: 14px 28px; background: #F9FAFB; color: #111827; border: 1px solid #E5E7EB; border-radius: 12px; font: 700 14px/1 Inter, system-ui, sans-serif; white-space: nowrap; transition: border-color .2s, background .2s; } .ds-chip:hover { border-color: #e83387; background: rgba(232,51,135,0.08); }"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Cabecera pegada con papel al 92% y blur. Enlaces de 44px de alto de toque.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Funciones</a><a href=\"#\">Precio</a><a class=\"ds-nav-cta\" href=\"#\">Prueba 15 días gratis</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 20px; padding: 14px 20px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid #E5E7EB; font: 600 14px/1 Inter, system-ui, sans-serif; } .ds-nav a { display: inline-flex; align-items: center; min-height: 44px; color: #374151; text-decoration: none; transition: color .2s; } .ds-nav a:hover { color: #c0166a; } .ds-nav a:focus-visible { outline: 3px solid #c0166a; outline-offset: 3px; border-radius: 6px; } .ds-nav-cta { background: #d4227a; color: #fff !important; padding: 10px 18px; border-radius: 12px; font-weight: 700; box-shadow: 0 4px 14px rgba(232,51,135,0.20); } .ds-nav-cta:hover { background: #c0166a; color: #fff !important; }"
+    },
+    {
+      "name": "Botón flotante de WhatsApp",
+      "kind": "custom",
+      "refersTo": "whatsapp-float",
+      "description": "El único color ajeno a la marca. Texto tinta sobre el verde, nunca blanco: blanco da 1.98:1.",
+      "html": "<a class=\"ds-wa\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.5-.73-2.99-1.18-4.85-4.28-5-4.48-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2.02.9 2.17.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .95.29.15.49.22.56.34.07.12.07.7-.17 1.38z\"/></svg>WhatsApp</a>",
+      "css": ".ds-wa { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 14px 20px; background: #25D366; color: #111827; border-radius: 999px; font: 800 14px/1 Inter, system-ui, sans-serif; text-decoration: none; box-shadow: 0 6px 20px -4px rgba(6,95,70,0.45); transition: transform .2s, box-shadow .2s; } .ds-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 28px -6px rgba(6,95,70,0.55); } .ds-wa:focus-visible { outline: 3px solid #c0166a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón de pausa del bucle",
+      "kind": "custom",
+      "description": "Acompaña a cualquier contenido en movimiento continuo. :hover no existe en un móvil, así que la pausa necesita un control real (WCAG 2.2.2).",
+      "html": "<button class=\"ds-pause\" aria-pressed=\"false\">Pausar el movimiento</button>",
+      "css": ".ds-pause { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 14px; background: #fff; color: #374151; border: 1px solid #E5E7EB; border-radius: 999px; font: 700 13px/1 Inter, system-ui, sans-serif; cursor: pointer; transition: border-color .2s, color .2s; } .ds-pause:hover { border-color: #e83387; color: #c0166a; } .ds-pause:focus-visible { outline: 3px solid #c0166a; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Salón Recién Pintado",
+    "overview": "Paredes blancas, buena luz, un solo acento fucsia que se ve desde la puerta, y todo en su sitio. El sistema es papel blanco de borde a borde, tipografía muy pesada para la jerarquía, y un fucsia de esmalte que aparece poco y manda mucho. La sensación que persigue no es 'app moderna': es la de un local limpio donde se sabe exactamente dónde está cada cosa, porque eso es lo que el producto le vende a alguien que hoy lleva la agenda en la cabeza.\n\nLa densidad es generosa en escritorio y deliberadamente compacta en móvil, porque ahí se lee de verdad: secciones de 80px pasan a 44px y las rejillas de tres o cuatro columnas caen a dos en vez de apilarse en una tira infinita. El peso lo carga la tipografía, no la decoración: Inter en 800 y 900 hace el trabajo que en otros sistemas harían ilustraciones. El único adorno estructural es el halo fucsia bajo los botones de acción, y está ahí para señalar dónde se toca.\n\nEl anti-referente confirmado es la plantilla de SaaS genérica: nada de texto con degradado, nada de etiquetas pequeñas encima de los titulares, nada de tarjetas iguales de icono-título-texto haciendo de estructura de página. El titular se sostiene solo y el énfasis se da con peso, no con color líquido.",
+    "keyCharacteristics": [
+      "Papel blanco como base, nunca fondo gris ni tarjeta sobre tarjeta.",
+      "Un solo acento cromático, en tres versiones según el trabajo que hace.",
+      "Tipografía extrema (400 para cuerpo, 900 para display) como única jerarquía.",
+      "Compactación agresiva en móvil sin quitar contenido.",
+      "Todo control se toca con el dedo: 44px mínimo, 48px en campos."
+    ],
+    "rules": [
+      {
+        "name": "La Regla de los Tres Trabajos",
+        "section": "colors",
+        "body": "El fucsia tiene tres tokens porque hace tres trabajos con tres exigencias de contraste distintas: superficie decorativa (esmalte), superficie con texto blanco (esmalte-cta) y texto sobre claro (esmalte-ink). Usar el token equivocado no se ve mal — falla WCAG en silencio. Antes de esta separación había 35 fallos de contraste, todos por este motivo."
+      },
+      {
+        "name": "La Regla del Único Saturado",
+        "section": "colors",
+        "body": "El fucsia es el único color saturado de la página. Si una pantalla nueva necesita un segundo color de acento, la respuesta es casi siempre que no lo necesita: usa peso tipográfico o el tinte al 8%."
+      },
+      {
+        "name": "La Regla del Verde Prestado",
+        "section": "colors",
+        "body": "El verde de WhatsApp no es de la marca y no se extiende. No se usa para éxito, ni para 'activo', ni para nada que no sea el botón que abre WhatsApp."
+      },
+      {
+        "name": "La Regla del Titular Solo",
+        "section": "typography",
+        "body": "Nada de etiquetas pequeñas encima de un titular. Ni 'Cómo funciona', ni 'Empieza hoy', ni un chip de categoría. El h2 es una frase completa que se explica sola; una etiqueta encima solo repite lo que el menú ya dice."
+      },
+      {
+        "name": "La Regla del Peso, no del Color",
+        "section": "typography",
+        "body": "El énfasis dentro de un titular se da con <em> en Fucsia de Tinta, sin cursiva y sin degradado. El texto con degradado está prohibido en este sistema."
+      },
+      {
+        "name": "La Regla de las Dos Columnas",
+        "section": "layout",
+        "body": "En móvil una rejilla cae a dos columnas, no a una. Apilar en una sola columna dobla el alto de la sección y ese alto se paga en abandono."
+      },
+      {
+        "name": "La Regla del Halo Reservado",
+        "section": "elevation",
+        "body": "El halo fucsia significa 'esto se toca'. No es decoración y no se pone en tarjetas, bandas ni contenedores."
+      },
+      {
+        "name": "La Regla del Pelo de 1px",
+        "section": "shapes",
+        "body": "Un separador es una línea de 1px en Línea. Nada de bordes de color de 3px o 4px a un lado de una tarjeta para dar énfasis; eso es de otro sistema."
+      }
+    ],
+    "dos": [
+      "Do elegir el token de fucsia por el trabajo que hace: esmalte-cta bajo texto blanco, esmalte-ink como texto, esmalte para superficie y borde.",
+      "Do dar 44px de alto a cualquier cosa que se toque, y 48px a los campos.",
+      "Do compactar en móvil bajando paddings y pasando a dos columnas, sin quitar contenido.",
+      "Do poner el estado deshabilitado y el mensaje real en todo lo que envíe datos: la conexión lenta es el caso normal, no el borde.",
+      "Do envolver la animación en @media (prefers-reduced-motion: no-preference) con el estado visible como valor por defecto, para que quien pida menos movimiento vea el contenido y no una página en blanco.",
+      "Do dar un control real a cualquier cosa que se mueva en bucle."
+    ],
+    "donts": [
+      "Don't poner texto con degradado. El énfasis es peso y color sólido.",
+      "Don't poner una etiqueta pequeña encima de un titular.",
+      "Don't poner texto blanco sobre esmalte, ni sobre verde-whatsapp.",
+      "Don't usar el halo fucsia en nada que no se toque.",
+      "Don't anidar tarjetas, ni usar rejillas de icono-título-texto iguales como estructura de página.",
+      "Don't meter un segundo color de acento. Si hace falta jerarquía, es peso.",
+      "Don't escribir transition: all, ni quitar el outline sin poner un anillo sólido con 3:1 de contraste en su lugar.",
+      "Don't cargar fuentes con @import desde el CSS, ni añadir pesos de Inter que el diseño no use.",
+      "Don't publicar una cifra sin una consulta que la reproduzca."
+    ]
+  }
+}

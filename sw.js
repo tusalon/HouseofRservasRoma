@@ -1,4 +1,4 @@
-const CACHE_NAME = "house-rservasroma-v8";
+const CACHE_NAME = "house-rservasroma-v9";
 const ASSETS = [
   "./",
   "./index.html",
@@ -30,19 +30,43 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+// POR QUE CACHE-FIRST
+// La version anterior iba primero a la red y solo usaba la cache si la red
+// FALLABA. En Cuba el caso tipico no es que falle: es que tarda ocho segundos.
+// Con esa estrategia la salonera esperaba esos ocho segundos aunque la pagina
+// estuviera entera en su telefono, y sin timeout que la rescatara.
+//
+// Ahora se sirve lo cacheado al instante y la copia nueva se baja por detras
+// (stale-while-revalidate): la visita de hoy es inmediata y la de mañana ya
+// trae los cambios. El precio es ver una version con un despliegue de retraso,
+// que en una landing es mucho mas barato que una pantalla en blanco.
 self.addEventListener("fetch", (event) => {
-  if (!event.request.url.startsWith("http")) return;
-  if (event.request.url.includes("wa.me")) return;
+  const { request } = event;
+
+  // Solo GET: el alta va por POST a Supabase y no se cachea nunca.
+  if (request.method !== "GET") return;
+  if (!request.url.startsWith("http")) return;
+  if (request.url.includes("wa.me")) return;
+  if (request.url.includes("supabase.co")) return;
 
   event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        if (event.request.method === "GET" && response.ok) {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-        }
-        return response;
-      })
-      .catch(() => caches.match(event.request).then((cached) => cached || caches.match("./index.html")))
+    caches.match(request).then((cached) => {
+      const fresh = fetch(request)
+        .then((response) => {
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+          }
+          return response;
+        })
+        .catch(() => cached || caches.match("./index.html"));
+
+      // Si hay copia local se devuelve ya y la red sigue su curso aparte.
+      if (cached) {
+        event.waitUntil(fresh.catch(() => {}));
+        return cached;
+      }
+      return fresh;
+    })
   );
 });

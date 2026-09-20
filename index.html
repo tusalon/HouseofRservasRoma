@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RservasRoma — App de reservas para tu salón</title>
-  <meta name="description" content="Más de 300 salones en varios países usan RservasRoma para recibir reservas online, cobrar anticipos, recordar citas y medir ingresos. 15 días de prueba gratis.">
-  <meta name="theme-color" content="#101828">
+  <meta name="description" content="Más de 340 salones en las 15 provincias de Cuba usan RservasRoma para recibir reservas online, cobrar anticipos, recordar citas y medir ingresos. 15 días de prueba gratis.">
+  <meta name="theme-color" content="#ffffff">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="RservasRoma">
@@ -13,6 +13,9 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/icon-192x192.png" type="image/png">
   <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,7 +28,7 @@
         </span>
         <span>
           <strong>RservasRoma</strong>
-          <small>+300 salones activos</small>
+          <small>+340 salones activos</small>
         </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
@@ -47,15 +50,18 @@
     ═══════════════════════════════════════════ -->
     <section class="hero section">
       <div class="hero-copy">
-        <p class="eyebrow">La app de reservas para salones de belleza</p>
-        <h1>Tu salón merece <span class="grad-text">una app propia</span>.</h1>
-        <p class="hero-text">Más de 300 salones en varios países ya reciben reservas 24/7, cobran anticipos y organizan su agenda — sin perder el control de su WhatsApp.</p>
+        <h1>Tu salón merece <em>una app propia</em>.</h1>
+        <p class="hero-text">Más de 340 salones — en las 15 provincias de Cuba — ya reciben reservas 24/7, cobran anticipos y organizan su agenda sin perder el control de su WhatsApp.</p>
         <div class="hero-actions">
           <a class="button primary" href="#crear">Quiero mi app — 15 días gratis</a>
           <a class="button secondary" href="#galeria">Ver la app por dentro</a>
         </div>
         <div class="hero-proof" aria-label="Indicadores clave">
-          <span><strong>+<span class="countup" data-target="300">0</span> negocios</strong> activos en varios países</span>
+          <!-- Cifras medidas el 18/09/2026 en la tabla negocios (configurado=true):
+               341 negocios de reservas, todos en plan de pago. Para refrescarlas,
+               contar de nuevo antes de subirlas: un numero viejo puesto como actual
+               es peor que uno redondeado a la baja. -->
+          <span><strong>+<span class="countup" data-target="341">0</span> negocios</strong> activos en toda Cuba</span>
           <span><strong>Lista en 24–72 h</strong> sin instalar nada</span>
           <span><strong>Sin comisiones</strong> por reserva</span>
         </div>
@@ -78,14 +84,19 @@
          PROOF STRIP
     ═══════════════════════════════════════════ -->
     <section class="section trusted">
-      <div class="marquee" aria-label="Datos clave de RservasRoma">
+      <div class="marquee-head">
+        <button class="marquee-pause" type="button" id="marqueePause" aria-pressed="false">
+          Pausar el movimiento
+        </button>
+      </div>
+      <div class="marquee" id="marquee" aria-label="Datos clave de RservasRoma">
         <div class="marquee-track">
-          <span>+300 negocios activos</span>
-          <span>Disponible en varios países</span>
+          <span>+340 negocios activos</span>
+          <span>En las 15 provincias de Cuba</span>
           <span>Lista en 24 a 72 horas</span>
           <span>Soporte directo por WhatsApp</span>
-          <span aria-hidden="true">+300 negocios activos</span>
-          <span aria-hidden="true">Disponible en varios países</span>
+          <span aria-hidden="true">+340 negocios activos</span>
+          <span aria-hidden="true">En las 15 provincias de Cuba</span>
           <span aria-hidden="true">Lista en 24 a 72 horas</span>
           <span aria-hidden="true">Soporte directo por WhatsApp</span>
         </div>
@@ -97,7 +108,6 @@
     ═══════════════════════════════════════════ -->
     <section class="section conversion-band">
       <div>
-        <p class="eyebrow">¿Te suena familiar?</p>
         <h2>Llevas la agenda en la cabeza, el WhatsApp lleno y tres clientas esperando respuesta al mismo tiempo.</h2>
       </div>
       <div class="conversion-list">
@@ -113,7 +123,6 @@
     ═══════════════════════════════════════════ -->
     <section class="section platform-section">
       <div class="section-heading">
-        <p class="eyebrow">Cómo funciona</p>
         <h2>Un enlace. Tu clienta reserva. Tú recibes la cita organizada.</h2>
         <p>Sin apps que descargar, sin pasarelas de pago extranjeras, sin contratos. Solo tu salón funcionando de forma profesional.</p>
       </div>
@@ -146,7 +155,6 @@
     ═══════════════════════════════════════════ -->
     <section class="section audience-section">
       <div class="section-heading">
-        <p class="eyebrow">Para quién es</p>
         <h2>Diseñado para negocios que viven de una agenda ordenada.</h2>
       </div>
       <div class="audience-grid">
@@ -164,7 +172,6 @@
     ═══════════════════════════════════════════ -->
     <section class="section" id="testimonios">
       <div class="section-heading">
-        <p class="eyebrow">Lo que dicen quienes ya lo usan</p>
         <h2>Negocios reales. Resultados reales.</h2>
       </div>
       <div class="testimonios-grid">
@@ -209,7 +216,6 @@
     ═══════════════════════════════════════════ -->
     <section class="section" id="funciones">
       <div class="section-heading">
-        <p class="eyebrow">Todo lo que incluye</p>
         <h2>Una sola herramienta para manejar el salón completo.</h2>
       </div>
       <div class="feature-grid">
@@ -266,7 +272,6 @@
     ═══════════════════════════════════════════ -->
     <section class="section gallery-section" id="galeria">
       <div class="section-heading">
-        <p class="eyebrow">Galería real</p>
         <h2>Capturas de una app configurada con RservasRoma.</h2>
         <p>Vista de clienta, panel administrativo, servicios, profesionales, estadísticas y detalle de citas — todo personalizado.</p>
       </div>
@@ -317,7 +322,6 @@
     ═══════════════════════════════════════════ -->
     <section class="section" id="precios">
       <div class="section-heading">
-        <p class="eyebrow">Un solo precio, todo incluido</p>
         <h2>1,500 CUP al mes en Cuba. Sin letra pequeña.</h2>
         <p>15 días de prueba gratis para probarlo sin compromiso. Un precio, todo el ecosistema.</p>
       </div>
@@ -340,7 +344,6 @@
     ═══════════════════════════════════════════ -->
     <section class="section" id="faq">
       <div class="section-heading">
-        <p class="eyebrow">Preguntas frecuentes</p>
         <h2>Respuestas rápidas antes de dar el paso.</h2>
       </div>
       <div class="faq-list">
@@ -350,7 +353,7 @@
         </details>
         <details>
           <summary>¿Funciona en Cuba?</summary>
-          <p>Sí, y fue diseñado especialmente para negocios en Cuba. Funciona con WhatsApp, sin depender de pasarelas de pago internacionales, soporta CUP y USD. La misma app se usa hoy en varios países más.</p>
+          <p>Sí, y fue diseñado especialmente para negocios en Cuba. Funciona con WhatsApp, sin depender de pasarelas de pago internacionales, soporta CUP y USD. Hoy hay salones usándolo en las 15 provincias del país, y el primero fuera de Cuba ya trabaja desde España.</p>
         </details>
         <details>
           <summary>¿Cuánto cuesta y qué incluye?</summary>
@@ -389,7 +392,6 @@
     <section class="section urgencia-band">
       <div class="urgencia-inner">
         <div>
-          <p class="eyebrow">¿Sigues gestionando citas por WhatsApp?</p>
           <h2>Cada día sin RservasRoma es un turno que se pierde o un mensaje que queda sin responder.</h2>
         </div>
         <div class="urgencia-ctas">
@@ -405,7 +407,6 @@
     <section class="section form-section" id="crear">
       <div class="contact-grid">
         <div class="form-copy">
-          <p class="eyebrow">Empieza hoy</p>
           <h2>Crea tu app de reservas gratis.</h2>
           <p>Solo necesitamos estos datos para empezar. Te escribimos por WhatsApp y en 24–72 h tienes tu sistema listo.</p>
           <ul class="form-benefits">
@@ -455,24 +456,25 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <strong>RservasRoma</strong>
-        <p>La app de reservas para salones de belleza, disponible en varios países. Más de 300 negocios activos.</p>
+        <p>La app de reservas para salones de belleza. Más de 340 negocios activos en las 15 provincias de Cuba.</p>
         <a class="button primary" href="#crear" style="margin-top:16px;display:inline-flex;width:auto;padding:10px 18px;font-size:14px">Prueba 15 días gratis</a>
       </div>
       <div class="footer-col">
-        <h4>Producto</h4>
+        <h3>Producto</h3>
         <a href="#funciones">Funciones</a>
         <a href="#galeria">Capturas</a>
         <a href="#precios">Precio</a>
       </div>
       <div class="footer-col">
-        <h4>Ayuda</h4>
+        <h3>Ayuda</h3>
         <a href="#faq">Preguntas frecuentes</a>
         <a href="https://wa.me/15154650340" target="_blank" rel="noopener">Soporte WhatsApp</a>
         <a href="https://chat.whatsapp.com/E8S5IQrEHSEIq7Yt2jFiG1?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4" target="_blank" rel="noopener">La Casa de la Comunidad</a>
       </div>
       <div class="footer-col">
-        <h4>Disponible en</h4>
-        <span>🌎 Varios países</span>
+        <h3>Disponible en</h3>
+        <span>🇨🇺 Cuba — las 15 provincias</span>
+        <span>🇪🇸 España</span>
       </div>
     </div>
     <div class="footer-bottom">

@@ -63,7 +63,10 @@ if ("serviceWorker" in navigator) {
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   deferredPrompt = event;
-  installButton.hidden = false;
+  // alta.html tambien carga este script y no tiene el boton de instalar:
+  // sin la guarda, Chrome lanzaba un TypeError en esa pagina al disparar
+  // beforeinstallprompt. El handler del clic de abajo ya usaba ?.
+  if (installButton) installButton.hidden = false;
 });
 
 installButton?.addEventListener("click", async () => {
@@ -88,37 +91,75 @@ function buildRequestText() {
   return lines.join("\n");
 }
 
+const submitButton = form?.querySelector('button[type="submit"]');
+
+function setStatus(message, kind) {
+  if (!formStatus) return;
+  formStatus.textContent = message;
+  formStatus.classList.remove("is-ok", "is-err");
+  if (kind) formStatus.classList.add(kind);
+}
+
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!form.reportValidity()) return;
+  // Con conexion lenta el boton parece muerto y se toca dos veces: eso creaba
+  // dos filas para el mismo salon en solicitudes_alta.
+  if (form.dataset.sending === "1") return;
 
   const data = new FormData(form);
   const text = buildRequestText();
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  const submitLabel = submitButton?.textContent;
+
+  form.dataset.sending = "1";
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando…";
+  }
+  setStatus("Abriendo WhatsApp…");
 
   // Primero se registra (sin esperar) y despues se abre WhatsApp en el mismo
   // gesto del click, que es lo que el navegador exige para no bloquearlo.
-  window.guardarSolicitudRservas({
+  const guardado = window.guardarSolicitudRservas({
     salon: data.get("salon"),
     whatsapp: data.get("whatsapp"),
     email: data.get("email"),
     plataforma: data.get("plataforma"),
     origen: "landing"
-  }).catch(() => {
-    // Si Supabase falla, el WhatsApp igual se abrio: la solicitud no se pierde.
   });
 
-  formStatus.textContent = "Solicitud registrada. Abriendo WhatsApp…";
   window.open(url, "_blank", "noopener,noreferrer");
+
+  guardado
+    .then((response) => {
+      // fetch resuelve tambien con 4xx y 5xx, asi que hay que mirar el estado:
+      // el catch anterior solo veia caidas de red.
+      if (!response.ok) throw new Error(String(response.status));
+      setStatus("Solicitud registrada. Si WhatsApp no se abrió, toca Copiar y escríbenos.", "is-ok");
+    })
+    .catch(() => {
+      // Antes esto era un catch vacio y el mensaje decia "Solicitud registrada"
+      // aunque no se hubiera guardado nada. Justo el caso que la tabla existe
+      // para cubrir: si ella no envia el WhatsApp, el lead se pierde de verdad.
+      setStatus("No pudimos guardar la solicitud. Envía el mensaje de WhatsApp que se abrió, o toca Copiar y escríbenos.", "is-err");
+    })
+    .finally(() => {
+      delete form.dataset.sending;
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = submitLabel;
+      }
+    });
 });
 
 copyButton?.addEventListener("click", async () => {
   const text = buildRequestText();
   try {
     await navigator.clipboard.writeText(text);
-    formStatus.textContent = "Solicitud copiada.";
+    setStatus("Solicitud copiada. Pégala en WhatsApp y te respondemos.", "is-ok");
   } catch {
-    formStatus.textContent = "No se pudo copiar automáticamente. Selecciona el texto generado en WhatsApp.";
+    setStatus("No se pudo copiar. Selecciona el texto a mano y envíanoslo por WhatsApp.", "is-err");
   }
 });
 
@@ -139,10 +180,33 @@ if ("IntersectionObserver" in window) {
   });
 }
 
+/* ── PAUSA DEL MARQUEE ── */
+// La franja de datos se mueve en bucle y la unica pausa era :hover, que en un
+// movil no existe. WCAG 2.2.2 (nivel A) exige poder pararla.
+const marquee = document.querySelector("#marquee");
+const marqueePause = document.querySelector("#marqueePause");
+
+marqueePause?.addEventListener("click", () => {
+  const paused = marquee.dataset.motion === "paused";
+  if (paused) {
+    delete marquee.dataset.motion;
+  } else {
+    marquee.dataset.motion = "paused";
+  }
+  marqueePause.setAttribute("aria-pressed", String(!paused));
+  marqueePause.textContent = paused ? "Pausar el movimiento" : "Reanudar el movimiento";
+});
+
 /* ── COUNT-UP NUMBERS ── */
 const countEls = document.querySelectorAll(".countup");
+const quietMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function animateCount(el) {
   const target = parseInt(el.dataset.target, 10) || 0;
+  // Quien pide menos movimiento ve la cifra final, no una cuenta subiendo.
+  if (quietMotion) {
+    el.textContent = target;
+    return;
+  }
   const duration = 1200;
   const start = performance.now();
   function tick(now) {

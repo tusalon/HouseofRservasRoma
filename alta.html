@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crea tu app de reservas — RservasRoma</title>
   <meta name="description" content="Déjanos 4 datos y en 24–72 h tu salón tiene su app de reservas lista. 15 días de prueba gratis.">
-  <meta name="theme-color" content="#e83387">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="icons/icon-192x192.png" type="image/png">
   <link rel="apple-touch-icon" href="icons/icon-192x192.png">
   <style>
     :root {
       --brand: #e83387;
       --brand-dark: #c0166a;
+      /* Blanco sobre --brand da 4.0:1 y no pasa AA. Para el boton, 4.87:1. */
+      --brand-cta: #d4227a;
       --ink: #111827;
       --muted: #6B7280;
       --line: #E5E7EB;
@@ -84,7 +86,7 @@
       font-weight: 700;
       font-family: inherit;
       color: #fff;
-      background: var(--brand);
+      background: var(--brand-cta);
       border: none;
       border-radius: 12px;
       cursor: pointer;
