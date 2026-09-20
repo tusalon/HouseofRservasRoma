@@ -1,4 +1,4 @@
-const CACHE_NAME = "house-rservasroma-v9";
+const CACHE_NAME = "house-rservasroma-v10";
 const ASSETS = [
   "./",
   "./index.html",
@@ -18,7 +18,12 @@ const ASSETS = [
 self.addEventListener("install", (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+    // cache: "reload" obliga a ir a la red. Sin esto, addAll acepta lo que
+    // tenga la cache HTTP del navegador, y una version vieja entraba en la
+    // cache nueva como si fuera la recien desplegada. Paso exactamente eso.
+    caches.open(CACHE_NAME).then((cache) =>
+      cache.addAll(ASSETS.map((url) => new Request(url, { cache: "reload" })))
+    )
   );
 });
 
@@ -49,9 +54,18 @@ self.addEventListener("fetch", (event) => {
   if (request.url.includes("wa.me")) return;
   if (request.url.includes("supabase.co")) return;
 
+  const sameOrigin = new URL(request.url).origin === self.location.origin;
+
   event.respondWith(
     caches.match(request).then((cached) => {
-      const fresh = fetch(request)
+      // Misma trampa en la revalidacion: un fetch normal se conforma con lo que
+      // la cache HTTP considere fresco (GitHub Pages manda max-age=600), asi que
+      // la copia vieja se reescribia sobre si misma. "no-cache" revalida contra
+      // el origen; con ETag sigue siendo barato.
+      const revalidar = sameOrigin
+        ? new Request(request.url, { cache: "no-cache" })
+        : request;
+      const fresh = fetch(revalidar)
         .then((response) => {
           if (response.ok) {
             const copy = response.clone();
