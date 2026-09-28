@@ -92,6 +92,7 @@ function buildRequestText() {
 }
 
 const submitButton = form?.querySelector('button[type="submit"]');
+const submitLabel = submitButton?.textContent;
 
 function setStatus(message, kind) {
   if (!formStatus) return;
@@ -105,14 +106,11 @@ form?.addEventListener("submit", (event) => {
   if (!form.reportValidity()) return;
   // Con conexion lenta el boton parece muerto y se toca dos veces: eso creaba
   // dos filas para el mismo salon en solicitudes_alta.
-  if (form.dataset.sending === "1") return;
+  if (submitButton?.disabled) return;
 
   const data = new FormData(form);
   const text = buildRequestText();
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-  const submitLabel = submitButton?.textContent;
-
-  form.dataset.sending = "1";
   if (submitButton) {
     submitButton.disabled = true;
     submitButton.textContent = "Enviando…";
@@ -145,7 +143,6 @@ form?.addEventListener("submit", (event) => {
       setStatus("No pudimos guardar la solicitud. Envía el mensaje de WhatsApp que se abrió, o toca Copiar y escríbenos.", "is-err");
     })
     .finally(() => {
-      delete form.dataset.sending;
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.textContent = submitLabel;

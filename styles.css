@@ -12,13 +12,8 @@
      tintes: como texto o bajo texto blanco se queda en 4.0:1 y no pasa AA.
      Para esos dos trabajos hay un token propio, medido. */
   --brand:      #e83387;
-  --brand-dark: #c0166a;
-  --brand-cta:  #d4227a;  /* superficie con texto blanco encima  -> 4.87:1 */
-  --brand-ink:  #c0166a;  /* rosa como texto sobre claro         -> 5.89:1 */
-  /* RESERVADO, hoy sin uso: es el rosa correcto para texto sobre las bandas
-     ciruela (6.75:1). Se queda declarado para que quien escriba ahi no
-     alcance --brand, que en ese fondo se queda en 4.47:1 y no pasa AA. */
-  --brand-on-dark: #f472b6;
+  --brand-dark: #c0166a;  /* tambien es el rosa como texto sobre claro -> 5.89:1 */
+  --brand-cta:  #d4227a;  /* superficie con texto blanco encima        -> 4.87:1 */
   --brand-soft: rgba(232,51,135,0.08);
   --brand-glow: rgba(232,51,135,0.20);
   --wa-green:   #25D366;
@@ -26,7 +21,6 @@
   --plum-deep:  #1a0a2e;
   --plum:       #2d0a1f;
   --footer-text: #9CA3AF;
-  --footer-dim:  #6B7280;
   /* Aviso positivo: el badge de "15 dias gratis". Es el unico verde de marca
      del sitio (el de WhatsApp es prestado). #065f46 sobre #d1fae5 = 6.78:1. */
   --aviso-fondo: #d1fae5;
@@ -35,14 +29,12 @@
   /* Vidriera: el degradado del marco donde vive el mockup del telefono. */
   --vidriera:      #fdf0f7;
   --vidriera-hondo:#f5d0e8;
-  --focus-ring: var(--brand-ink);
   --ink:        #111827;
   --ink-soft:   #374151;
   --muted:      #6B7280;
   --line:       #E5E7EB;
   --paper:      #FFFFFF;
   --soft:       #F9FAFB;
-  --card:       #FFFFFF;
   --radius:     12px;
   --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
   --shadow:     0 4px 24px rgba(0,0,0,0.08);
@@ -69,7 +61,7 @@ a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid var(--focus-ring);
+  outline: 3px solid var(--brand-dark);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -114,7 +106,7 @@ p { margin: 0; }
 /* 44px de alto en lo que se toca con el dedo. Antes eran 17px: por debajo del
    minimo de 24px de WCAG 2.5.8. */
 .nav-links a { display: inline-flex; align-items: center; min-height: 44px; }
-.nav-links a:hover { color: var(--brand-ink); }
+.nav-links a:hover { color: var(--brand-dark); }
 .nav-cta {
   color: white !important;
   background: var(--brand-cta);
@@ -159,7 +151,7 @@ h1 {
 
 h1 em {
   font-style: normal;
-  color: var(--brand-ink);
+  color: var(--brand-dark);
 }
 
 h2 {
@@ -204,7 +196,6 @@ h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: var(--ink); }
   transform: none;
   box-shadow: none;
 }
-.button[disabled]:hover { transform: none; }
 .button.primary {
   background: var(--brand-cta);
   color: white;
@@ -222,6 +213,9 @@ h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: var(--ink); }
   box-shadow: var(--shadow-sm);
 }
 .button.secondary:hover { background: var(--brand-soft); border-color: var(--brand-dark); transform: translateY(-2px); }
+/* Detras de los :hover de variante a proposito: misma especificidad, gana
+   el ultimo. Antes iba delante y el boton deshabilitado seguia levantandose. */
+.button[disabled]:hover { transform: none; }
 
 .hero-proof {
   display: flex;
@@ -300,7 +294,7 @@ h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: var(--ink); }
   display: grid;
   gap: 4px;
 }
-.hero-metrics span { color: var(--brand-ink); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+.hero-metrics span { color: var(--brand-dark); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
 .hero-metrics strong { font-size: 15px; color: var(--ink); font-weight: 700; }
 
 /* ── PROOF STRIP ── */
@@ -521,7 +515,7 @@ h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: var(--ink); }
 .price-single-amount strong { font-size: 44px; font-weight: 900; }
 .price-single-amount span { font-size: 18px; font-weight: 600; color: var(--muted); margin-left: 4px; }
 .price-single-note { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-.price-single-note a { color: var(--brand-ink); font-weight: 700; text-decoration: underline; }
+.price-single-note a { color: var(--brand-dark); font-weight: 700; text-decoration: underline; }
 .price-single-list {
   list-style: none;
   padding: 0;
@@ -554,7 +548,7 @@ summary {
   justify-content: space-between;
   align-items: center;
 }
-summary::after { content: '+'; color: var(--brand-ink); font-size: 22px; font-weight: 400; transition: transform 0.2s; }
+summary::after { content: '+'; color: var(--brand-dark); font-size: 22px; font-weight: 400; transition: transform 0.2s; }
 details[open] summary::after { transform: rotate(45deg); }
 summary::-webkit-details-marker { display: none; }
 details p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size: 15px; }
@@ -576,7 +570,7 @@ details p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size:
 }
 .urgencia-inner h2 { color: white; }
 .urgencia-ctas { display: flex; flex-direction: column; gap: 12px; }
-.urgencia-ctas .button.primary { background: white; color: var(--brand-ink); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+.urgencia-ctas .button.primary { background: white; color: var(--brand-dark); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
 .urgencia-ctas .button.primary:hover { background: white; color: var(--brand-dark); transform: translateY(-2px); }
 .urgencia-ctas .button.secondary { background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.4); box-shadow: none; }
 .urgencia-ctas .button.secondary:hover { background: rgba(255,255,255,0.25); border-color: white; color: white; }
@@ -623,18 +617,18 @@ details p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size:
 .contact-form input:focus-visible {
   /* El anillo anterior era brand-glow: rosa al 20% sobre fondo casi blanco,
      invisible con teclado. Solido da 5.64:1 contra el fondo del campo. */
-  outline: 3px solid var(--focus-ring);
+  outline: 3px solid var(--brand-dark);
   outline-offset: 2px;
-  border-color: var(--brand-ink);
+  border-color: var(--brand-dark);
   background: white;
 }
 .contact-form input:focus:not(:focus-visible) {
   outline: none;
-  border-color: var(--brand-ink);
+  border-color: var(--brand-dark);
   background: white;
 }
 .contact-form input::placeholder { color: var(--muted); }
-.form-status { margin-top: 12px; font-weight: 700; font-size: 14px; line-height: 1.45; color: var(--brand-ink); }
+.form-status { margin-top: 12px; font-weight: 700; font-size: 14px; line-height: 1.45; color: var(--brand-dark); }
 .form-status:empty { display: none; }
 .form-status.is-ok  { color: #047857; }
 .form-status.is-err { color: #b91c1c; }
@@ -698,7 +692,7 @@ details p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size:
   gap: 20px;
   justify-content: space-between;
   flex-wrap: wrap;
-  color: var(--footer-dim);
+  color: var(--muted);
   font-size: 13px;
 }
 
@@ -870,7 +864,7 @@ details p { margin-top: 14px; color: var(--muted); line-height: 1.65; font-size:
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
 }
-.marquee-pause:hover { border-color: var(--brand); color: var(--brand-ink); }
+.marquee-pause:hover { border-color: var(--brand); color: var(--brand-dark); }
 @media (prefers-reduced-motion: reduce) {
   /* Sin movimiento no hay nada que pausar. */
   .marquee-head { display: none; }

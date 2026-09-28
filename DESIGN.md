@@ -5,7 +5,6 @@ colors:
   esmalte: "#e83387"
   esmalte-cta: "#d4227a"
   esmalte-ink: "#c0166a"
-  esmalte-on-dark: "#f472b6"
   ciruela: "#2d0a1f"
   ciruela-profunda: "#1a0a2e"
   tinta: "#111827"
@@ -181,8 +180,6 @@ se lee como "esto importa".
 - **Fucsia de Tinta** (`{colors.esmalte-ink}`): el rosa cuando hace de texto sobre
   claro. Etiquetas, `<em>` del titular, enlaces, el `+` del FAQ, anillo de foco.
   Da 5.89:1 sobre papel y 5.64:1 sobre papel suave.
-- **Fucsia sobre Oscuro** (`{colors.esmalte-on-dark}`): sobre las bandas ciruela hay
-  que aclarar, no oscurecer. Da 6.75:1 sobre ciruela; el fucsia base daría 4.47:1.
 
 ### Secondary
 - **Ciruela** (`{colors.ciruela}`) y **Ciruela Profunda**
