@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tusalon.github.io/HouseofRservasRoma/sitemap.xml
