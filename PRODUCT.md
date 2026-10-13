@@ -54,6 +54,12 @@ servicios son del negocio.
   24–72 h. Esto es parte del producto, no una limitación temporal.
 - **Dos puertas de entrada:** el formulario de `index.html` (`origen: 'landing'`)
   y la página corta `alta.html` (`origen: 'alta-corta'`).
+- **De dónde viene y para qué rubro.** Sin pedirle nada más a la visitante: `?fuente=` (o `utm_source`,
+  `ref`) de la dirección y el botón «Quiero mi app» de cada rubro se guardan en la columna `nota` de
+  `solicitudes_alta` como `web | fuente=... | rubro=...`. No cambia la tabla. Enlaces de ejemplo:
+  `.../HouseofRservasRoma/?fuente=ig-comentario` para el comentario fijado de Instagram.
+- **Después de enviar**, el formulario cede su lugar a un panel con los siguientes pasos (solo si la
+  solicitud se guardó; si falla, el formulario sigue ahí).
 - **El lead se guarda antes de WhatsApp.** Se inserta en la tabla Supabase
   `solicitudes_alta` con `keepalive`, sin esperar, porque el navegador bloquea
   `window.open` si pierde el gesto del usuario. Antes, si la salonera no le daba

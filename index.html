@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RservasRoma — App de reservas para tu salón</title>
   <meta name="description" content="Más de 350 negocios en las 15 provincias de Cuba tienen su app de reservas con RservasRoma: reservas online, anticipos, recordatorios y estadísticas. Incluye RomaFinanzas y RomaCrece. 15 días de prueba gratis.">
+  <link rel="canonical" href="https://tusalon.github.io/HouseofRservasRoma/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="RservasRoma">
+  <meta property="og:title" content="RservasRoma — App de reservas para tu salón">
+  <meta property="og:description" content="Más de 350 negocios en las 15 provincias de Cuba tienen su app de reservas con RservasRoma: reservas online, anticipos, recordatorios y estadísticas. Incluye RomaFinanzas y RomaCrece. 15 días de prueba gratis.">
+  <meta property="og:url" content="https://tusalon.github.io/HouseofRservasRoma/">
+  <meta property="og:image" content="https://tusalon.github.io/HouseofRservasRoma/icons/icon-512x512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RservasRoma — App de reservas para tu salón">
+  <meta name="twitter:description" content="Más de 350 negocios en las 15 provincias de Cuba tienen su app de reservas con RservasRoma: reservas online, anticipos, recordatorios y estadísticas. Incluye RomaFinanzas y RomaCrece. 15 días de prueba gratis.">
+  <meta name="twitter:image" content="https://tusalon.github.io/HouseofRservasRoma/icons/icon-512x512.png">
   <meta name="theme-color" content="#ffffff">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,9 +26,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -73,10 +83,10 @@
       </div>
       <div class="hero-visual" aria-label="Vista previa de RservasRoma">
         <div class="hero-device">
-          <img src="assets/screenshots/cliente-multiples-servicios.jpg" alt="App de reservas personalizada con RservasRoma">
+          <img fetchpriority="high" src="assets/screenshots/cliente-multiples-servicios.webp" width="576" height="1280" alt="App de reservas personalizada con RservasRoma">
         </div>
         <div class="hero-device hero-device-offset">
-          <img src="assets/screenshots/admin-agenda.jpg" alt="Panel administrativo con agenda del día">
+          <img src="assets/screenshots/admin-agenda.webp" width="576" height="1280" alt="Panel administrativo con agenda del día">
         </div>
         <div class="hero-metrics">
           <span>Agenda de hoy</span>
@@ -165,12 +175,12 @@
         <h2>Diseñado para negocios que viven de una agenda ordenada.</h2>
       </div>
       <div class="audience-grid">
-        <article><strong>💅 Manicuristas</strong><span>Servicios por duración, combos, anticipos y disponibilidad real.</span></article>
-        <article><strong>✂️ Barberías</strong><span>Turnos rápidos, varios profesionales, recordatorios y clientes recurrentes.</span></article>
-        <article><strong>💇 Peluquerías</strong><span>Reservas largas, múltiples servicios y control por profesional.</span></article>
-        <article><strong>👁️ Lashes y estética</strong><span>Citas detalladas, cobro de anticipo y seguimiento de ausencias.</span></article>
-        <article><strong>💄 Salones generales</strong><span>Una agenda para varios servicios, equipos y horarios distintos.</span></article>
-        <article><strong>🎓 Academias</strong><span>Clases, cupos, registros, comunicación y cobros organizados.</span></article>
+        <article><strong>💅 Manicuristas</strong><span>Servicios por duración, combos, anticipos y disponibilidad real.</span><a class="eco-link" href="#crear" data-rubro="Manicura">Quiero mi app →</a></article>
+        <article><strong>✂️ Barberías</strong><span>Turnos rápidos, varios profesionales, recordatorios y clientes recurrentes.</span><a class="eco-link" href="#crear" data-rubro="Barbería">Quiero mi app →</a></article>
+        <article><strong>💇 Peluquerías</strong><span>Reservas largas, múltiples servicios y control por profesional.</span><a class="eco-link" href="#crear" data-rubro="Peluquería">Quiero mi app →</a></article>
+        <article><strong>👁️ Lashes y estética</strong><span>Citas detalladas, cobro de anticipo y seguimiento de ausencias.</span><a class="eco-link" href="#crear" data-rubro="Lashes y estética">Quiero mi app →</a></article>
+        <article><strong>💄 Salones generales</strong><span>Una agenda para varios servicios, equipos y horarios distintos.</span><a class="eco-link" href="#crear" data-rubro="Salón general">Quiero mi app →</a></article>
+        <article><strong>🎓 Academias</strong><span>Clases, cupos, registros, comunicación y cobros organizados.</span><a class="eco-link" href="#crear" data-rubro="Academia">Quiero mi app →</a></article>
       </div>
     </section>
 
@@ -297,10 +307,10 @@
             <p>Bienvenida, ingreso, servicios, calendario y horarios disponibles.</p>
           </div>
           <div class="gallery-row">
-            <figure><img src="assets/screenshots/cliente-multiples-servicios.jpg" alt="Pantalla de bienvenida del negocio" loading="lazy"><figcaption>Bienvenida del negocio</figcaption></figure>
-            <figure><img src="assets/screenshots/cliente-servicios-elegidos.jpg" alt="Ingreso por WhatsApp" loading="lazy"><figcaption>Ingreso por WhatsApp</figcaption></figure>
-            <figure><img src="assets/screenshots/cliente-calendario.jpg" alt="Servicios disponibles" loading="lazy"><figcaption>Servicios disponibles</figcaption></figure>
-            <figure><img src="assets/screenshots/cliente-horarios.jpg" alt="Horarios disponibles" loading="lazy"><figcaption>Horarios reales</figcaption></figure>
+            <figure><img src="assets/screenshots/cliente-multiples-servicios.webp" width="576" height="1280" alt="Pantalla de bienvenida del negocio" loading="lazy"><figcaption>Bienvenida del negocio</figcaption></figure>
+            <figure><img src="assets/screenshots/cliente-servicios-elegidos.webp" width="576" height="1280" alt="Ingreso por WhatsApp" loading="lazy"><figcaption>Ingreso por WhatsApp</figcaption></figure>
+            <figure><img src="assets/screenshots/cliente-calendario.webp" width="576" height="1280" alt="Servicios disponibles" loading="lazy"><figcaption>Servicios disponibles</figcaption></figure>
+            <figure><img src="assets/screenshots/cliente-horarios.webp" width="576" height="1280" alt="Horarios disponibles" loading="lazy"><figcaption>Horarios reales</figcaption></figure>
           </div>
         </section>
 
@@ -310,10 +320,10 @@
             <p>Reservas, agenda, detalle de cita, profesionales, clientes y edición del negocio.</p>
           </div>
           <div class="gallery-row">
-            <figure><img src="assets/screenshots/admin-reservas.jpg" alt="Panel de reservas" loading="lazy"><figcaption>Control de reservas</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-nueva-reserva.jpg" alt="Crear reserva manual" loading="lazy"><figcaption>Reserva manual</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-agenda.jpg" alt="Agenda diaria" loading="lazy"><figcaption>Agenda diaria</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-detalle-cita.jpg" alt="Detalle completo de una cita" loading="lazy"><figcaption>Detalle completo</figcaption></figure>
+            <figure><img src="assets/screenshots/admin-reservas.webp" width="576" height="1280" alt="Panel de reservas" loading="lazy"><figcaption>Control de reservas</figcaption></figure>
+            <figure><img src="assets/screenshots/admin-nueva-reserva.webp" width="576" height="1280" alt="Crear reserva manual" loading="lazy"><figcaption>Reserva manual</figcaption></figure>
+            <figure><img src="assets/screenshots/admin-agenda.webp" width="576" height="1280" alt="Agenda diaria" loading="lazy"><figcaption>Agenda diaria</figcaption></figure>
+            <figure><img src="assets/screenshots/admin-detalle-cita.webp" width="576" height="1280" alt="Detalle completo de una cita" loading="lazy"><figcaption>Detalle completo</figcaption></figure>
           </div>
         </section>
 
@@ -323,10 +333,10 @@
             <p>Cobros reales, rendimiento por período y detalle del movimiento diario.</p>
           </div>
           <div class="gallery-row">
-            <figure><img src="assets/screenshots/admin-estadisticas-dos.jpg" alt="Estadísticas generales" loading="lazy"><figcaption>Resumen general</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-estadisticas-uno.jpg" alt="Ingresos y estados" loading="lazy"><figcaption>Ingresos y estados</figcaption></figure>
-            <figure><img src="assets/screenshots/estadisticas-detalle-dia.jpg" alt="Detalle del día" loading="lazy"><figcaption>Detalle del día</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-servicios.jpg" alt="Gestión de servicios" loading="lazy"><figcaption>Gestión de servicios</figcaption></figure>
+            <figure><img src="assets/screenshots/admin-estadisticas-dos.webp" width="576" height="1280" alt="Estadísticas generales" loading="lazy"><figcaption>Resumen general</figcaption></figure>
+            <figure><img src="assets/screenshots/admin-estadisticas-uno.webp" width="576" height="1280" alt="Ingresos y estados" loading="lazy"><figcaption>Ingresos y estados</figcaption></figure>
+            <figure><img src="assets/screenshots/estadisticas-detalle-dia.webp" width="576" height="1280" alt="Detalle del día" loading="lazy"><figcaption>Detalle del día</figcaption></figure>
+            <figure><img src="assets/screenshots/admin-servicios.webp" width="576" height="1280" alt="Gestión de servicios" loading="lazy"><figcaption>Gestión de servicios</figcaption></figure>
           </div>
         </section>
       </div>
@@ -448,10 +458,45 @@
           <p>Sí. Activas el anticipo por transferencia y la cita queda pendiente hasta que confirmes el pago. Si no llega, el turno se libera automáticamente y no pierdes el hueco.</p>
         </details>
         <details>
+          <summary>¿Mis clientas necesitan crear una cuenta?</summary>
+          <p>No necesitan contraseña. Entran con su número de WhatsApp, eligen servicio, día y hora, y listo.</p>
+        </details>
+        <details>
+          <summary>¿Puedo cambiar el logo, los colores y los mensajes después?</summary>
+          <p>Sí. Desde tu panel cambias logo, colores, imagen de fondo, nombre, servicios y tus mensajes de confirmación y de bienvenida cuando quieras.</p>
+        </details>
+        <details>
           <summary>¿Cómo empiezo?</summary>
           <p>Llena el formulario de abajo con los datos de tu salón. Te escribimos por WhatsApp en pocas horas para guiarte paso a paso. En 24–72 h tu app está lista.</p>
         </details>
       </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CÓMO EMPIEZA
+    ═══════════════════════════════════════════ -->
+    <section class="section" id="como-empieza">
+      <div class="section-heading">
+        <h2>Así empiezas, sin complicarte.</h2>
+        <p>No hay registro ni contraseñas que inventar: nosotros montamos tu app y te la entregamos lista.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="icon">1</span>
+          <h3>Nos dejas 4 datos</h3>
+          <p>Nombre del salón, WhatsApp, correo y si usarás Android o iOS. Se hace en un minuto.</p>
+        </li>
+        <li>
+          <span class="icon">2</span>
+          <h3>Te escribimos por WhatsApp</h3>
+          <p>En pocas horas, para guiarte paso a paso con lo que necesita tu salón.</p>
+        </li>
+        <li>
+          <span class="icon">3</span>
+          <h3>Tu app, lista en 24–72 h</h3>
+          <p>Recibes tu enlace de reservas para compartir en Instagram, WhatsApp y estados, con 15 días gratis para probarla.</p>
+        </li>
+      </ol>
     </section>
 
     <!-- ═══════════════════════════════════════════
@@ -485,6 +530,7 @@
           </ul>
         </div>
         <form class="contact-form" id="businessForm">
+          <input type="hidden" name="rubro" id="rubro" value="">
           <div class="field">
             <label for="salon">Nombre del salón</label>
             <input id="salon" name="salon" required placeholder="Ej: Nails by Roma">
@@ -512,6 +558,17 @@
           </div>
           <p class="form-status" id="formStatus" role="status"></p>
         </form>
+        <div class="thanks" id="thanks" role="status" hidden>
+          <h3>¡Listo! Recibimos tu solicitud 💗</h3>
+          <p>Te escribimos por WhatsApp en pocas horas. Si no se abrió WhatsApp, escríbenos tú con este botón:</p>
+          <a class="button primary" id="thanksWhatsapp" href="https://wa.me/15154650340" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          <ol class="thanks-steps">
+            <li>Te escribimos y te guiamos paso a paso.</li>
+            <li>Montamos tu app: queda lista en 24–72 h.</li>
+            <li>Recibes tu enlace y empiezas tus 15 días gratis.</li>
+          </ol>
+          <a class="eco-link" href="https://chat.whatsapp.com/E8S5IQrEHSEIq7Yt2jFiG1?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4" target="_blank" rel="noopener">Unirme a La Casa de la Comunidad →</a>
+        </div>
       </div>
     </section>
 
