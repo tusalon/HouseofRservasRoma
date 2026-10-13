@@ -101,7 +101,12 @@ margen para ajustar los usos del rosa — no la identidad.
 
 - Nombre: **RservasRoma**. Ecosistema: **Roma** (RomaFinanzas, RomaCrece,
   RomaHub). Comunidad: "La Casa de la Comunidad".
-- Identidad actual: rosa fucsia `#e83387` sobre blanco, tipografía Inter.
+- Identidad actual: rosa fucsia `#e83387` sobre blanco. Titulares en Bricolage Grotesque y cuerpo en
+  Inter, las dos alojadas en el sitio (`assets/fonts`).
+- **Estilo de la web (decisión del 13 de octubre de 2026):** web de producto limpia al nivel de acabado de
+  Fresha y Booksy, sin capturas de pantalla ni galería. La app se demuestra con maquetas dibujadas en
+  CSS/SVG, con datos de ejemplo siempre rotulados como ilustrativos. Si más adelante se quiere probar con
+  capturas reales, no volver a la galería de 12 pantallas.
 - Voz: humana, directa, de comunidad — no de vendedor. Habla en femenino cuando
   se dirige a la clienta y a la salonera, porque es quien mayoritariamente usa
   el producto. Nada de presión ni de urgencia inventada.
@@ -150,7 +155,7 @@ agrupar por `plan`, `es_tienda_externa` y `provincia`.
   Nails Carla Salon; Leci N. · Leci's Nails) salen del mismo origen que
   `TESTIMONIOS_NEGOCIOS` de RomaHub, así que corresponden a negocios reales.
 - 78 productos/cursos y 9 negocios con valoraciones verificadas en RomaHub.
-- Capturas reales de una app configurada, en `assets/screenshots` (576×1280).
+- Las capturas de `assets/screenshots` se retiraron el 13/10/2026 (la usuaria las rechazó); la web ya no usa capturas.
 - Guía de inicio en PDF: `guia-inicio-rservasroma.pdf`.
 
 **Actualización del 13 de octubre de 2026** (Supabase, `zorhclhvykikaachfrmp`, consultas de solo lectura):

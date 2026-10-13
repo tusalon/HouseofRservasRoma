@@ -198,69 +198,31 @@ copyButton?.addEventListener("click", async () => {
   }
 });
 
-/* ── SCROLL REVEAL ── */
-const revealTargets = document.querySelectorAll(".section:not(.hero)");
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
-  revealTargets.forEach((el) => {
-    el.classList.add("reveal");
-    revealObserver.observe(el);
-  });
+/* ── MAQUETA DE RESERVA (hero) ── */
+// Es un ejemplo dibujado, no la app real: deja probar elegir servicio, dia y hora.
+// Cambiar cualquier opcion borra el aviso de "reserva enviada".
+const demo = document.querySelector("#demo");
+const demoConfirm = document.querySelector("#demoConfirm");
+const demoDone = document.querySelector("#demoDone");
+
+function resetDemo() {
+  if (!demoConfirm) return;
+  demoConfirm.removeAttribute("data-done");
+  demoConfirm.textContent = "Reservar";
+  if (demoDone) demoDone.textContent = "";
 }
 
-/* ── PAUSA DEL MARQUEE ── */
-// La franja de datos se mueve en bucle y la unica pausa era :hover, que en un
-// movil no existe. WCAG 2.2.2 (nivel A) exige poder pararla.
-const marquee = document.querySelector("#marquee");
-const marqueePause = document.querySelector("#marqueePause");
-
-marqueePause?.addEventListener("click", () => {
-  const paused = marquee.dataset.motion === "paused";
-  if (paused) {
-    delete marquee.dataset.motion;
-  } else {
-    marquee.dataset.motion = "paused";
-  }
-  marqueePause.setAttribute("aria-pressed", String(!paused));
-  marqueePause.textContent = paused ? "Pausar el movimiento" : "Reanudar el movimiento";
+demo?.addEventListener("click", (event) => {
+  const opcion = event.target.closest("button[data-pick]");
+  if (!opcion || opcion.disabled) return;
+  demo.querySelectorAll(`[data-pick="${opcion.dataset.pick}"]`).forEach((boton) => {
+    boton.setAttribute("aria-pressed", String(boton === opcion));
+  });
+  resetDemo();
 });
 
-/* ── COUNT-UP NUMBERS ── */
-const countEls = document.querySelectorAll(".countup");
-const quietMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-function animateCount(el) {
-  const target = parseInt(el.dataset.target, 10) || 0;
-  // Quien pide menos movimiento ve la cifra final, no una cuenta subiendo.
-  if (quietMotion) {
-    el.textContent = target;
-    return;
-  }
-  const duration = 1200;
-  const start = performance.now();
-  function tick(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(eased * target);
-    if (progress < 1) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-}
-if (countEls.length && "IntersectionObserver" in window) {
-  const countObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCount(entry.target);
-        countObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  countEls.forEach((el) => countObserver.observe(el));
-}
-
+demoConfirm?.addEventListener("click", () => {
+  demoConfirm.setAttribute("data-done", "");
+  demoConfirm.textContent = "Reserva enviada";
+  if (demoDone) demoDone.textContent = "Te avisamos 24 h y 1 h antes de tu cita.";
+});
