@@ -404,6 +404,7 @@ h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: var(--ink); }
 }
 .feature:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: var(--shadow); }
 .feature p { color: var(--muted); line-height: 1.6; font-size: 14px; margin-top: 8px; }
+.eco-link { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--brand-dark, var(--brand)); text-decoration: underline; text-underline-offset: 3px; }
 .icon {
   display: inline-grid;
   place-items: center;
@@ -456,7 +457,7 @@ h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; color: var(--ink); }
 /* ── TESTIMONIOS ── */
 .testimonios-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 .testimonio-card {

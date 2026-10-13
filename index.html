@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RservasRoma — App de reservas para tu salón</title>
-  <meta name="description" content="Más de 340 salones en las 15 provincias de Cuba usan RservasRoma para recibir reservas online, cobrar anticipos, recordar citas y medir ingresos. 15 días de prueba gratis.">
+  <meta name="description" content="Más de 350 negocios en las 15 provincias de Cuba tienen su app de reservas con RservasRoma: reservas online, anticipos, recordatorios y estadísticas. Incluye RomaFinanzas y RomaCrece. 15 días de prueba gratis.">
   <meta name="theme-color" content="#ffffff">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,12 +29,13 @@
         </span>
         <span>
           <strong>RservasRoma</strong>
-          <small>+340 salones activos</small>
+          <small>+350 negocios con su app</small>
         </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
       <div class="nav-links" id="menu">
         <a href="#funciones">Funciones</a>
+        <a href="#ecosistema">Qué incluye</a>
         <a href="#galeria">Capturas</a>
         <a href="#precios">Precio</a>
         <a href="#testimonios">Opiniones</a>
@@ -52,17 +53,20 @@
     <section class="hero section">
       <div class="hero-copy">
         <h1>Tu salón merece <em>una app propia</em>.</h1>
-        <p class="hero-text">Más de 340 salones — en las 15 provincias de Cuba — ya reciben reservas 24/7, cobran anticipos y organizan su agenda sin perder el control de su WhatsApp.</p>
+        <p class="hero-text">Más de 350 negocios — en las 15 provincias de Cuba — ya tienen su app de reservas: reciben citas 24/7, cobran anticipos y organizan su agenda sin perder el control de su WhatsApp.</p>
         <div class="hero-actions">
           <a class="button primary" href="#crear">Quiero mi app — 15 días gratis</a>
           <a class="button secondary" href="#galeria">Ver la app por dentro</a>
         </div>
         <div class="hero-proof" aria-label="Indicadores clave">
-          <!-- Cifras medidas el 18/09/2026 en la tabla negocios (configurado=true):
-               341 negocios de reservas, todos en plan de pago. Para refrescarlas,
-               contar de nuevo antes de subirlas: un numero viejo puesto como actual
-               es peor que uno redondeado a la baja. -->
-          <span><strong>+<span class="countup" data-target="341">0</span> negocios</strong> activos en toda Cuba</span>
+          <!-- Cifras medidas el 13/10/2026 (Supabase):
+               361 negocios de reservas configurados (negocios.configurado = true y
+               es_tienda_externa = false) -> "+350".
+               86 negocios con reservas creadas en los ultimos 30 dias -> "+80".
+               "Activos" a secas ya no se usa: solo 86 de 361 recibieron reservas este
+               mes y por suscripcion hay 59 activas, 405 en prueba y 3 suspendidas.
+               Para refrescarlas, contar de nuevo y redondear a la baja. -->
+          <span><strong>+<span class="countup" data-target="350">0</span> negocios</strong> con su app en toda Cuba</span>
           <span><strong>Lista en 24–72 h</strong> sin instalar nada</span>
           <span><strong>Sin comisiones</strong> por reserva</span>
         </div>
@@ -92,11 +96,13 @@
       </div>
       <div class="marquee" id="marquee" aria-label="Datos clave de RservasRoma">
         <div class="marquee-track">
-          <span>+340 negocios activos</span>
+          <span>+350 negocios con su app</span>
+          <span>+80 con reservas este mes</span>
           <span>En las 15 provincias de Cuba</span>
           <span>Lista en 24 a 72 horas</span>
           <span>Soporte directo por WhatsApp</span>
-          <span aria-hidden="true">+340 negocios activos</span>
+          <span aria-hidden="true">+350 negocios con su app</span>
+          <span aria-hidden="true">+80 con reservas este mes</span>
           <span aria-hidden="true">En las 15 provincias de Cuba</span>
           <span aria-hidden="true">Lista en 24 a 72 horas</span>
           <span aria-hidden="true">Soporte directo por WhatsApp</span>
@@ -173,7 +179,7 @@
     ═══════════════════════════════════════════ -->
     <section class="section" id="testimonios">
       <div class="section-heading">
-        <h2>Negocios reales. Resultados reales.</h2>
+        <h2>Lo que cuentan las dueñas.</h2>
       </div>
       <div class="testimonios-grid">
         <article class="testimonio-card">
@@ -198,17 +204,10 @@
             </div>
           </div>
         </article>
-        <article class="testimonio-card">
-          <div class="testimonio-stars">★★★★★</div>
-          <p class="testimonio-text">"Los anticipos me salvaron. Antes las clientas cancelaban y yo perdía el turno. Ahora pagan para reservar y las ausencias bajaron a cero."</p>
-          <div class="testimonio-author">
-            <div class="testimonio-avatar">L</div>
-            <div>
-              <strong>Leci N.</strong>
-              <span>Leci's Nails · Cuba</span>
-            </div>
-          </div>
-        </article>
+        <!-- Quitado el 13/10/2026: Leci N. (Leci's Nails) decia "las ausencias bajaron a cero".
+             Sus datos no lo respaldan (2 reservas en junio, 0 ausencias) y no hay un antes y un
+             despues medido. Volver a poner un testimonio de anticipos solo con una frase real
+             y con permiso de la duena. -->
       </div>
     </section>
 
@@ -242,8 +241,8 @@
         </article>
         <article class="feature">
           <span class="icon">05</span>
-          <h3>Recordatorios para WhatsApp</h3>
-          <p>Mensajes listos para enviar: avisos de turno próximo, pago pendiente, ausencia y seguimiento post-cita.</p>
+          <h3>Recordatorios automáticos</h3>
+          <p>La clienta recibe un aviso en su celular 24 horas y 1 hora antes de su cita, si tiene la app instalada y las notificaciones activadas. Tú además tienes mensajes listos para WhatsApp: turno de mañana, pago pendiente, ausencia y seguimiento.</p>
         </article>
         <article class="feature">
           <span class="icon">06</span>
@@ -264,6 +263,21 @@
           <span class="icon">09</span>
           <h3>Marca 100% propia</h3>
           <p>Logo, colores, imagen de fondo, nombre, mensajes y servicios personalizados. Tu clienta ve TU salón, no una app genérica.</p>
+        </article>
+        <article class="feature">
+          <span class="icon">10</span>
+          <h3>Tus propios mensajes</h3>
+          <p>Escribe tu mensaje de confirmación de cita y tu bienvenida para clientas nuevas, o deja los de siempre. Tú decides.</p>
+        </article>
+        <article class="feature">
+          <span class="icon">11</span>
+          <h3>Clientas nuevas</h3>
+          <p>Un panel te muestra quién acaba de hacer su primera reserva y, con un toque, le abres WhatsApp con la bienvenida ya escrita.</p>
+        </article>
+        <article class="feature">
+          <span class="icon">12</span>
+          <h3>Fidelidad y cumpleaños</h3>
+          <p>Premia a tus clientas recurrentes con un descuento cada cierto número de citas y ofrece una bonificación en su cumpleaños.</p>
         </article>
       </div>
     </section>
@@ -319,6 +333,56 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
+         ECOSISTEMA — LO QUE INCLUYE LA SUSCRIPCIÓN
+    ═══════════════════════════════════════════ -->
+    <section class="section" id="ecosistema">
+      <div class="section-heading">
+        <h2>Una suscripción, todo el ecosistema Roma.</h2>
+        <p>Además de tu app de reservas, tienes herramientas para saber cuánto ganas, qué publicar y dónde te encuentran tus clientas.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature">
+          <span class="icon">Rr</span>
+          <h3>RservasRoma</h3>
+          <p>Tu app de reservas con tu marca: reservas 24/7, panel, anticipos, lista de espera, clientas nuevas y recordatorios.</p>
+        </article>
+        <article class="feature">
+          <span class="icon">Rf</span>
+          <h3>RomaFinanzas</h3>
+          <p>Conoce cuánto te queda limpio en cada servicio: fichas de costo, precio recomendado y margen de ganancia, con tus ingresos de RservasRoma.</p>
+          <a class="eco-link" href="https://tusalon.github.io/RomaFinanzas/" target="_blank" rel="noopener">Ver RomaFinanzas →</a>
+        </article>
+        <article class="feature">
+          <span class="icon">Rc</span>
+          <h3>RomaCrece</h3>
+          <p>Qué publicar esta semana en Instagram: auditoría de tu cuenta, ideas, planificador semanal, 30 reels listos para grabar y seguimiento de resultados.</p>
+          <a class="eco-link" href="https://tusalon.github.io/RomaCrece/" target="_blank" rel="noopener">Ver RomaCrece →</a>
+        </article>
+        <article class="feature">
+          <span class="icon">Rh</span>
+          <h3>RomaHub</h3>
+          <p>El directorio de la belleza de Cuba: tu salón visible para quienes buscan servicios, precios, productos y cursos.</p>
+          <a class="eco-link" href="https://tusalon.github.io/RomaHub/" target="_blank" rel="noopener">Ver RomaHub →</a>
+        </article>
+        <!-- CONFIRMAR antes de publicar: el acceso a VentasRoma26 sin costo para quien tiene
+             suscripcion activa de RservasRoma es una regla comercial que hoy NO esta escrita en el
+             codigo de VentasRoma26 (alli la tienda nueva tiene 10 dias gratis). Si no se va a dar,
+             borrar esta tarjeta y la linea del precio. -->
+        <article class="feature">
+          <span class="icon">Vr</span>
+          <h3>VentasRoma26</h3>
+          <p>Tu tienda con catálogo y pedidos por WhatsApp, dentro del directorio de tiendas de Cuba. Pídela sin costo extra con tu suscripción activa.</p>
+          <a class="eco-link" href="https://ventasroma26.com" target="_blank" rel="noopener">Ver VentasRoma26 →</a>
+        </article>
+        <article class="feature">
+          <span class="icon">+</span>
+          <h3>Lo que viene</h3>
+          <p>Los próximos proyectos del ecosistema entran en tu suscripción, sin costo extra, apenas se lancen.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
          PRECIO
     ═══════════════════════════════════════════ -->
     <section class="section" id="precios">
@@ -333,6 +397,9 @@
         <ul class="price-single-list">
           <li>✓ Acceso completo a RservasRoma: reservas online, panel administrativo, anticipos, recordatorios y estadísticas</li>
           <li>✓ Acceso a RomaFinanzas: cuánto ganas de verdad por servicio, precio recomendado y margen de ganancia</li>
+          <li>✓ Acceso a RomaCrece: qué publicar cada semana en Instagram, con 30 reels listos para grabar</li>
+          <li>✓ Tu salón en RomaHub, el directorio de la belleza de Cuba</li>
+          <li>✓ Tu tienda en VentasRoma26, sin costo extra con tu suscripción activa</li>
           <li>✓ Acceso a los próximos proyectos del ecosistema, sin costo extra, apenas se lancen</li>
           <li>✓ Soporte directo por WhatsApp</li>
         </ul>
@@ -358,7 +425,7 @@
         </details>
         <details>
           <summary>¿Cuánto cuesta y qué incluye?</summary>
-          <p>1,500 CUP al mes en Cuba, un solo precio con todo incluido: acceso completo a RservasRoma, acceso a RomaFinanzas (para saber cuánto ganas de verdad por servicio) y a los próximos proyectos del ecosistema, sin costo extra. Si tu negocio está en otro país, escríbenos por WhatsApp y te decimos el precio.</p>
+          <p>1,500 CUP al mes en Cuba, un solo precio con todo incluido: acceso completo a RservasRoma, RomaFinanzas (para saber cuánto ganas de verdad por servicio), RomaCrece (qué publicar cada semana en Instagram), tu lugar en RomaHub y tu tienda en VentasRoma26, y los próximos proyectos del ecosistema, sin costo extra. Si tu negocio está en otro país, escríbenos por WhatsApp y te decimos el precio.</p>
         </details>
         <details>
           <summary>¿Cuánto tarda en estar lista mi app?</summary>
@@ -370,7 +437,7 @@
         </details>
         <details>
           <summary>¿Puede enviar recordatorios a mis clientas?</summary>
-          <p>Sí. RservasRoma genera mensajes listos para enviar por WhatsApp: aviso de turno próximo, pago pendiente, seguimiento de ausencia y confirmación. Solo le das clic y lo envías.</p>
+          <p>Sí, de dos formas. La clienta que tiene la app y las notificaciones activadas recibe un aviso automático 24 horas y 1 hora antes de su cita. Y desde tu panel tienes mensajes listos para WhatsApp: turno de mañana, pago pendiente, seguimiento de ausencia y confirmación. Solo le das clic y lo envías.</p>
         </details>
         <details>
           <summary>¿Sirve si tengo varios profesionales en el salón?</summary>
@@ -378,7 +445,7 @@
         </details>
         <details>
           <summary>¿Se puede cobrar anticipo para que no cancelen?</summary>
-          <p>Sí. Activas el anticipo por transferencia y la cita queda pendiente hasta que confirmes el pago. Si no llega, el turno se libera automáticamente. Las ausencias bajan drásticamente.</p>
+          <p>Sí. Activas el anticipo por transferencia y la cita queda pendiente hasta que confirmes el pago. Si no llega, el turno se libera automáticamente y no pierdes el hueco.</p>
         </details>
         <details>
           <summary>¿Cómo empiezo?</summary>
@@ -457,7 +524,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <strong>RservasRoma</strong>
-        <p>La app de reservas para salones de belleza. Más de 340 negocios activos en las 15 provincias de Cuba.</p>
+        <p>La app de reservas para salones de belleza. Más de 350 negocios con su app en las 15 provincias de Cuba.</p>
         <a class="button primary" href="#crear" style="margin-top:16px;display:inline-flex;width:auto;padding:10px 18px;font-size:14px">Prueba 15 días gratis</a>
       </div>
       <div class="footer-col">

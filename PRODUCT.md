@@ -147,6 +147,25 @@ agrupar por `plan`, `es_tienda_externa` y `provincia`.
 - Capturas reales de una app configurada, en `assets/screenshots` (576×1280).
 - Guía de inicio en PDF: `guia-inicio-rservasroma.pdf`.
 
+**Actualización del 13 de octubre de 2026** (Supabase, `zorhclhvykikaachfrmp`, consultas de solo lectura):
+
+- 361 negocios de reservas configurados (`configurado = true` y `es_tienda_externa = false`); 390
+  configurados en total contando tiendas. La web dice "+350 negocios con su app".
+- **Solo 86 negocios tuvieron reservas creadas en los últimos 30 días** (`reservas.created_at`). La web
+  dice "+80 con reservas este mes". Por eso "activos" a secas ya no se usa en la web.
+- Suscripciones (`suscripciones.estado`): 59 `activa`, 405 `trial`, 3 `suspendida`. El texto del 18/09
+  de arriba ("los 341 en plan de pago") se basaba en `negocios.plan`, que no coincide con el estado
+  real de la suscripción: no se repite en la web.
+- Testimonio de Leci's Nails ("las ausencias bajaron a cero"): sus datos no lo respaldan (2 reservas en
+  junio, 0 ausencias, sin un antes y un después medido). Se quitó. Un testimonio nuevo de anticipos
+  solo con una frase real y con permiso de la dueña.
+- "Las ausencias bajan drásticamente" (FAQ de anticipos) se quitó: no hay medición.
+- **Dominio de VentasRoma26: `ventasroma26.com`** (no `romaventas26.com`, que no existe). Es un
+  directorio de tiendas con catálogo y pedidos por WhatsApp; la tienda nueva tiene 10 días gratis. Que
+  quien tiene suscripción activa de RservasRoma obtenga la tienda sin costo extra es una regla
+  comercial **pendiente de confirmar y de implementar** en VentasRoma26; la tarjeta de la web está
+  marcada con un comentario CONFIRMAR.
+
 Lo que sigue sin probar y no se debe afirmar:
 
 - Sin benchmarks, sin premios, sin prensa, sin métricas de conversión ni de
