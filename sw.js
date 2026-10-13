@@ -1,10 +1,11 @@
-const CACHE_NAME = "house-rservasroma-v14";
+const CACHE_NAME = "house-rservasroma-v15";
 const ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
   "./manifest.json",
+  "./assets/fonts/inter-latin.woff2",
   "./icons/icon-72x72.png",
   "./icons/icon-96x96.png",
   "./icons/icon-128x128.png",
