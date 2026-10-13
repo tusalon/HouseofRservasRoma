@@ -28,7 +28,8 @@ window.guardarSolicitudRservas = function (datos) {
       whatsapp: datos.whatsapp,
       email: datos.email,
       plataforma: String(datos.plataforma || "").toLowerCase() || null,
-      origen: datos.origen || "landing"
+      origen: datos.origen || "landing",
+      nota: datos.nota || null
     })
   });
 };
@@ -77,6 +78,28 @@ installButton?.addEventListener("click", async () => {
   installButton.hidden = true;
 });
 
+// De donde viene la solicitud y para que tipo de negocio es. No pide nada mas a la
+// visitante: sale de la direccion (?fuente=ig-comentario) y del boton "Quiero mi app"
+// de cada rubro. Va en la columna "nota" de solicitudes_alta (sin tocar la tabla).
+const limpiarEtiqueta = (valor) => String(valor || "").toLowerCase().replace(/[^a-z0-9áéíóúñ _-]/g, "").trim().slice(0, 40);
+const parametros = new URLSearchParams(location.search);
+const fuenteSolicitud = limpiarEtiqueta(parametros.get("fuente") || parametros.get("utm_source") || parametros.get("ref"));
+const rubroInput = document.querySelector("#rubro");
+if (rubroInput) rubroInput.value = limpiarEtiqueta(parametros.get("rubro"));
+
+document.querySelectorAll("[data-rubro]").forEach((enlace) => {
+  enlace.addEventListener("click", () => {
+    if (rubroInput) rubroInput.value = enlace.dataset.rubro;
+  });
+});
+
+function notaSolicitud() {
+  const partes = [];
+  if (fuenteSolicitud) partes.push(`fuente=${fuenteSolicitud}`);
+  if (rubroInput?.value) partes.push(`rubro=${rubroInput.value}`);
+  return partes.length ? `web | ${partes.join(" | ")}` : null;
+}
+
 function buildRequestText() {
   const data = new FormData(form);
   const lines = [
@@ -87,9 +110,22 @@ function buildRequestText() {
     `Correo electrónico: ${data.get("email") || ""}`,
     `Sistema operativo: ${data.get("plataforma") || ""}`
   ];
+  if (data.get("rubro")) lines.push(`Tipo de negocio: ${data.get("rubro")}`);
 
   return lines.join("\n");
 }
+
+// Tras guardar bien la solicitud, el formulario cede su lugar a los siguientes pasos.
+const thanks = document.querySelector("#thanks");
+const thanksWhatsapp = document.querySelector("#thanksWhatsapp");
+function mostrarGracias(urlWhatsapp) {
+  if (!thanks || !form) return;
+  if (thanksWhatsapp) thanksWhatsapp.href = urlWhatsapp;
+  form.hidden = true;
+  thanks.hidden = false;
+  thanks.scrollIntoView({ behavior: quietMotionForm ? "auto" : "smooth", block: "center" });
+}
+const quietMotionForm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const submitButton = form?.querySelector('button[type="submit"]');
 const submitLabel = submitButton?.textContent;
@@ -124,7 +160,8 @@ form?.addEventListener("submit", (event) => {
     whatsapp: data.get("whatsapp"),
     email: data.get("email"),
     plataforma: data.get("plataforma"),
-    origen: "landing"
+    origen: "landing",
+    nota: notaSolicitud()
   });
 
   window.open(url, "_blank", "noopener,noreferrer");
@@ -135,6 +172,7 @@ form?.addEventListener("submit", (event) => {
       // el catch anterior solo veia caidas de red.
       if (!response.ok) throw new Error(String(response.status));
       setStatus("Solicitud registrada. Si WhatsApp no se abrió, toca Copiar y escríbenos.", "is-ok");
+      mostrarGracias(url);
     })
     .catch(() => {
       // Antes esto era un catch vacio y el mensaje decia "Solicitud registrada"
