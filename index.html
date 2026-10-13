@@ -26,49 +26,59 @@
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <!-- Iconos: un solo trazo, dibujados aqui para no cargar nada mas. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 1.5h-15L6 16.5zM10 20.5a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v10.5H9.5L5.5 19.5V16H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><path d="M5 6.5h14v12H5zM5 10.5h14M9 4v4M15 4v4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 19V10M12 19V5M19 19v-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M4 16l5-5 4 4 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 20s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 11H5L6 8zM9 8a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+  </svg>
+
   <header class="site-header" id="inicio">
     <nav class="nav" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="RservasRoma inicio">
-        <span class="brand-mark">
-          <img src="icons/icon-192x192.png" alt="Logo de RservasRoma" width="42" height="42">
-        </span>
-        <span>
-          <strong>RservasRoma</strong>
-          <small>+350 negocios con su app</small>
-        </span>
+        <img src="icons/icon-192x192.png" alt="" width="40" height="40">
+        <strong>RservasRoma</strong>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
       <div class="nav-links" id="menu">
         <a href="#funciones">Funciones</a>
         <a href="#ecosistema">Qué incluye</a>
-        <a href="#galeria">Capturas</a>
         <a href="#precios">Precio</a>
         <a href="#testimonios">Opiniones</a>
-        <a href="#faq">FAQ</a>
-        <a class="nav-cta" href="#crear">🚀 Prueba 15 días gratis</a>
+        <a href="#faq">Preguntas</a>
+        <a class="nav-cta" href="#crear">Prueba 15 días gratis</a>
       </div>
     </nav>
   </header>
 
   <main>
 
-    <!-- ═══════════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════════ -->
-    <section class="hero section">
-      <div class="hero-copy">
-        <h1>Tu salón merece <em>una app propia</em>.</h1>
-        <p class="hero-text">Más de 350 negocios — en las 15 provincias de Cuba — ya tienen su app de reservas: reciben citas 24/7, cobran anticipos y organizan su agenda sin perder el control de su WhatsApp.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#crear">Quiero mi app — 15 días gratis</a>
-          <a class="button secondary" href="#galeria">Ver la app por dentro</a>
-        </div>
-        <div class="hero-proof" aria-label="Indicadores clave">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Tu salón merece una app propia.</h1>
+          <p class="lead">Más de 350 negocios — en las 15 provincias de Cuba — ya tienen su app de reservas: reciben citas 24/7, cobran anticipos y organizan su agenda sin perder el control de su WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#crear">Quiero mi app — 15 días gratis</a>
+            <a class="button ghost" href="#funciones">Ver qué incluye</a>
+          </div>
           <!-- Cifras medidas el 13/10/2026 (Supabase):
                361 negocios de reservas configurados (negocios.configurado = true y
                es_tienda_externa = false) -> "+350".
@@ -76,518 +86,526 @@
                "Activos" a secas ya no se usa: solo 86 de 361 recibieron reservas este
                mes y por suscripcion hay 59 activas, 405 en prueba y 3 suspendidas.
                Para refrescarlas, contar de nuevo y redondear a la baja. -->
-          <span><strong>+<span class="countup" data-target="350">0</span> negocios</strong> con su app en toda Cuba</span>
-          <span><strong>Lista en 24–72 h</strong> sin instalar nada</span>
-          <span><strong>Sin comisiones</strong> por reserva</span>
-        </div>
-      </div>
-      <div class="hero-visual" aria-label="Vista previa de RservasRoma">
-        <div class="hero-device">
-          <img fetchpriority="high" src="assets/screenshots/cliente-multiples-servicios.webp" width="576" height="1280" alt="App de reservas personalizada con RservasRoma">
-        </div>
-        <div class="hero-device hero-device-offset">
-          <img src="assets/screenshots/admin-agenda.webp" width="576" height="1280" alt="Panel administrativo con agenda del día">
-        </div>
-        <div class="hero-metrics">
-          <span>Agenda de hoy</span>
-          <strong>Reservas, cobros y recordatorios con tu marca</strong>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         PROOF STRIP
-    ═══════════════════════════════════════════ -->
-    <section class="section trusted">
-      <div class="marquee-head">
-        <button class="marquee-pause" type="button" id="marqueePause" aria-pressed="false">
-          Pausar el movimiento
-        </button>
-      </div>
-      <div class="marquee" id="marquee" aria-label="Datos clave de RservasRoma">
-        <div class="marquee-track">
-          <span>+350 negocios con su app</span>
-          <span>+80 con reservas este mes</span>
-          <span>En las 15 provincias de Cuba</span>
-          <span>Lista en 24 a 72 horas</span>
-          <span>Soporte directo por WhatsApp</span>
-          <span aria-hidden="true">+350 negocios con su app</span>
-          <span aria-hidden="true">+80 con reservas este mes</span>
-          <span aria-hidden="true">En las 15 provincias de Cuba</span>
-          <span aria-hidden="true">Lista en 24 a 72 horas</span>
-          <span aria-hidden="true">Soporte directo por WhatsApp</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         PROBLEMA → SOLUCIÓN
-    ═══════════════════════════════════════════ -->
-    <section class="section conversion-band">
-      <div>
-        <h2>Llevas la agenda en la cabeza, el WhatsApp lleno y tres clientas esperando respuesta al mismo tiempo.</h2>
-      </div>
-      <div class="conversion-list">
-        <span>❌ Confirmar cada cita a mano por WhatsApp</span>
-        <span>❌ Clientas que olvidan el turno y no avisan</span>
-        <span>❌ Huecos perdidos sin cobrar anticipo</span>
-        <span>✅ Con RservasRoma, se reservan solas</span>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         PLATAFORMA — LO QUE HACE
-    ═══════════════════════════════════════════ -->
-    <section class="section platform-section">
-      <div class="section-heading">
-        <h2>Un enlace. Tu clienta reserva. Tú recibes la cita organizada.</h2>
-        <p>Sin apps que descargar, sin pasarelas de pago extranjeras, sin contratos. Solo tu salón funcionando de forma profesional.</p>
-      </div>
-      <div class="platform-grid">
-        <article>
-          <span>01</span>
-          <h3>Tu página de reservas</h3>
-          <p>Enlace propio con tus servicios, profesionales, disponibilidad real y diseño de tu marca. Lo compartes en Instagram, WhatsApp o estados.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Reserva 24/7</h3>
-          <p>La clienta elige turno aunque estés atendiendo, descansando o durmiendo. Sin mensajes de ida y vuelta.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Cobros y anticipos</h3>
-          <p>Activa el anticipo y la cita queda pendiente hasta que confirmes el pago. El turno se libera solo si no llega.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>Agenda y estadísticas</h3>
-          <p>Ve el día, la semana o el mes de un vistazo. Cuánto cobras, qué servicio rinde más y quiénes faltan.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         PARA QUIÉN ES
-    ═══════════════════════════════════════════ -->
-    <section class="section audience-section">
-      <div class="section-heading">
-        <h2>Diseñado para negocios que viven de una agenda ordenada.</h2>
-      </div>
-      <div class="audience-grid">
-        <article><strong>💅 Manicuristas</strong><span>Servicios por duración, combos, anticipos y disponibilidad real.</span><a class="eco-link" href="#crear" data-rubro="Manicura">Quiero mi app →</a></article>
-        <article><strong>✂️ Barberías</strong><span>Turnos rápidos, varios profesionales, recordatorios y clientes recurrentes.</span><a class="eco-link" href="#crear" data-rubro="Barbería">Quiero mi app →</a></article>
-        <article><strong>💇 Peluquerías</strong><span>Reservas largas, múltiples servicios y control por profesional.</span><a class="eco-link" href="#crear" data-rubro="Peluquería">Quiero mi app →</a></article>
-        <article><strong>👁️ Lashes y estética</strong><span>Citas detalladas, cobro de anticipo y seguimiento de ausencias.</span><a class="eco-link" href="#crear" data-rubro="Lashes y estética">Quiero mi app →</a></article>
-        <article><strong>💄 Salones generales</strong><span>Una agenda para varios servicios, equipos y horarios distintos.</span><a class="eco-link" href="#crear" data-rubro="Salón general">Quiero mi app →</a></article>
-        <article><strong>🎓 Academias</strong><span>Clases, cupos, registros, comunicación y cobros organizados.</span><a class="eco-link" href="#crear" data-rubro="Academia">Quiero mi app →</a></article>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         TESTIMONIOS
-    ═══════════════════════════════════════════ -->
-    <section class="section" id="testimonios">
-      <div class="section-heading">
-        <h2>Lo que cuentan las dueñas.</h2>
-      </div>
-      <div class="testimonios-grid">
-        <article class="testimonio-card">
-          <div class="testimonio-stars">★★★★★</div>
-          <p class="testimonio-text">"Antes perdía horas confirmando citas por WhatsApp. Ahora las clientas reservan solas y yo recibo la notificación. En serio, cambió todo."</p>
-          <div class="testimonio-author">
-            <div class="testimonio-avatar">Y</div>
-            <div>
-              <strong>Yuliet M.</strong>
-              <span>Exotic Nails · La Habana, Cuba</span>
-            </div>
-          </div>
-        </article>
-        <article class="testimonio-card">
-          <div class="testimonio-stars">★★★★★</div>
-          <p class="testimonio-text">"Por muy poco cada mes tengo una app con mi nombre, mis colores y mis servicios. Las clientas piensan que invertí miles. Lo recomiendo sin dudar."</p>
-          <div class="testimonio-author">
-            <div class="testimonio-avatar">C</div>
-            <div>
-              <strong>Carla R.</strong>
-              <span>Nails Carla Salon · Cuba</span>
-            </div>
-          </div>
-        </article>
-        <!-- Quitado el 13/10/2026: Leci N. (Leci's Nails) decia "las ausencias bajaron a cero".
-             Sus datos no lo respaldan (2 reservas en junio, 0 ausencias) y no hay un antes y un
-             despues medido. Volver a poner un testimonio de anticipos solo con una frase real
-             y con permiso de la duena. -->
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         FUNCIONES
-    ═══════════════════════════════════════════ -->
-    <section class="section" id="funciones">
-      <div class="section-heading">
-        <h2>Una sola herramienta para manejar el salón completo.</h2>
-      </div>
-      <div class="feature-grid">
-        <article class="feature">
-          <span class="icon">01</span>
-          <h3>Reservas online 24/7</h3>
-          <p>La clienta elige servicio, profesional, fecha y hora según la disponibilidad real del negocio — sin necesitar tu ayuda.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">02</span>
-          <h3>Panel administrativo</h3>
-          <p>Agenda diaria, calendario, citas pendientes, completadas, canceladas, ausencias y cobro real — todo en un lugar.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">03</span>
-          <h3>Profesionales y permisos</h3>
-          <p>Cada profesional entra con su cuenta y ve solo lo que el negocio le permite. Privacidad y control total.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">04</span>
-          <h3>Anticipos y cobro real</h3>
-          <p>Activa el anticipo por transferencia. La reserva queda pendiente y el turno se libera solo si no llega el pago.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">05</span>
-          <h3>Recordatorios automáticos</h3>
-          <p>La clienta recibe un aviso en su celular 24 horas y 1 hora antes de su cita, si tiene la app instalada y las notificaciones activadas. Tú además tienes mensajes listos para WhatsApp: turno de mañana, pago pendiente, ausencia y seguimiento.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">06</span>
-          <h3>Android e iOS</h3>
-          <p>Funciona como web instalable en cualquier celular. También puede prepararse como APK descargable para Android.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">07</span>
-          <h3>Lista de espera</h3>
-          <p>Si un turno ocupado se libera, la admin recibe aviso con la clienta interesada. Cero huecos perdidos.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">08</span>
-          <h3>Estadísticas reales</h3>
-          <p>Resumen semanal, mensual y anual de cobros, citas completadas, canceladas, ausencias y rendimiento por servicio.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">09</span>
-          <h3>Marca 100% propia</h3>
-          <p>Logo, colores, imagen de fondo, nombre, mensajes y servicios personalizados. Tu clienta ve TU salón, no una app genérica.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">10</span>
-          <h3>Tus propios mensajes</h3>
-          <p>Escribe tu mensaje de confirmación de cita y tu bienvenida para clientas nuevas, o deja los de siempre. Tú decides.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">11</span>
-          <h3>Clientas nuevas</h3>
-          <p>Un panel te muestra quién acaba de hacer su primera reserva y, con un toque, le abres WhatsApp con la bienvenida ya escrita.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">12</span>
-          <h3>Fidelidad y cumpleaños</h3>
-          <p>Premia a tus clientas recurrentes con un descuento cada cierto número de citas y ofrece una bonificación en su cumpleaños.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         GALERÍA
-    ═══════════════════════════════════════════ -->
-    <section class="section gallery-section" id="galeria">
-      <div class="section-heading">
-        <h2>Capturas de una app configurada con RservasRoma.</h2>
-        <p>Vista de clienta, panel administrativo, servicios, profesionales, estadísticas y detalle de citas — todo personalizado.</p>
-      </div>
-      <div class="screenshot-gallery">
-        <section class="gallery-group" aria-label="Experiencia de la clienta">
-          <div class="gallery-group-heading">
-            <span>Experiencia de la clienta</span>
-            <p>Bienvenida, ingreso, servicios, calendario y horarios disponibles.</p>
-          </div>
-          <div class="gallery-row">
-            <figure><img src="assets/screenshots/cliente-multiples-servicios.webp" width="576" height="1280" alt="Pantalla de bienvenida del negocio" loading="lazy"><figcaption>Bienvenida del negocio</figcaption></figure>
-            <figure><img src="assets/screenshots/cliente-servicios-elegidos.webp" width="576" height="1280" alt="Ingreso por WhatsApp" loading="lazy"><figcaption>Ingreso por WhatsApp</figcaption></figure>
-            <figure><img src="assets/screenshots/cliente-calendario.webp" width="576" height="1280" alt="Servicios disponibles" loading="lazy"><figcaption>Servicios disponibles</figcaption></figure>
-            <figure><img src="assets/screenshots/cliente-horarios.webp" width="576" height="1280" alt="Horarios disponibles" loading="lazy"><figcaption>Horarios reales</figcaption></figure>
-          </div>
-        </section>
-
-        <section class="gallery-group" aria-label="Panel de administración">
-          <div class="gallery-group-heading">
-            <span>Panel de administración</span>
-            <p>Reservas, agenda, detalle de cita, profesionales, clientes y edición del negocio.</p>
-          </div>
-          <div class="gallery-row">
-            <figure><img src="assets/screenshots/admin-reservas.webp" width="576" height="1280" alt="Panel de reservas" loading="lazy"><figcaption>Control de reservas</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-nueva-reserva.webp" width="576" height="1280" alt="Crear reserva manual" loading="lazy"><figcaption>Reserva manual</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-agenda.webp" width="576" height="1280" alt="Agenda diaria" loading="lazy"><figcaption>Agenda diaria</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-detalle-cita.webp" width="576" height="1280" alt="Detalle completo de una cita" loading="lazy"><figcaption>Detalle completo</figcaption></figure>
-          </div>
-        </section>
-
-        <section class="gallery-group" aria-label="Estadísticas del negocio">
-          <div class="gallery-group-heading">
-            <span>Estadísticas del negocio</span>
-            <p>Cobros reales, rendimiento por período y detalle del movimiento diario.</p>
-          </div>
-          <div class="gallery-row">
-            <figure><img src="assets/screenshots/admin-estadisticas-dos.webp" width="576" height="1280" alt="Estadísticas generales" loading="lazy"><figcaption>Resumen general</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-estadisticas-uno.webp" width="576" height="1280" alt="Ingresos y estados" loading="lazy"><figcaption>Ingresos y estados</figcaption></figure>
-            <figure><img src="assets/screenshots/estadisticas-detalle-dia.webp" width="576" height="1280" alt="Detalle del día" loading="lazy"><figcaption>Detalle del día</figcaption></figure>
-            <figure><img src="assets/screenshots/admin-servicios.webp" width="576" height="1280" alt="Gestión de servicios" loading="lazy"><figcaption>Gestión de servicios</figcaption></figure>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         ECOSISTEMA — LO QUE INCLUYE LA SUSCRIPCIÓN
-    ═══════════════════════════════════════════ -->
-    <section class="section" id="ecosistema">
-      <div class="section-heading">
-        <h2>Una suscripción, todo el ecosistema Roma.</h2>
-        <p>Además de tu app de reservas, tienes herramientas para saber cuánto ganas, qué publicar y dónde te encuentran tus clientas.</p>
-      </div>
-      <div class="feature-grid">
-        <article class="feature">
-          <span class="icon">Rr</span>
-          <h3>RservasRoma</h3>
-          <p>Tu app de reservas con tu marca: reservas 24/7, panel, anticipos, lista de espera, clientas nuevas y recordatorios.</p>
-        </article>
-        <article class="feature">
-          <span class="icon">Rf</span>
-          <h3>RomaFinanzas</h3>
-          <p>Conoce cuánto te queda limpio en cada servicio: fichas de costo, precio recomendado y margen de ganancia, con tus ingresos de RservasRoma.</p>
-          <a class="eco-link" href="https://tusalon.github.io/RomaFinanzas/" target="_blank" rel="noopener">Ver RomaFinanzas →</a>
-        </article>
-        <article class="feature">
-          <span class="icon">Rc</span>
-          <h3>RomaCrece</h3>
-          <p>Qué publicar esta semana en Instagram: auditoría de tu cuenta, ideas, planificador semanal, 30 reels listos para grabar y seguimiento de resultados.</p>
-          <a class="eco-link" href="https://tusalon.github.io/RomaCrece/" target="_blank" rel="noopener">Ver RomaCrece →</a>
-        </article>
-        <article class="feature">
-          <span class="icon">Rh</span>
-          <h3>RomaHub</h3>
-          <p>El directorio de la belleza de Cuba: tu salón visible para quienes buscan servicios, precios, productos y cursos.</p>
-          <a class="eco-link" href="https://tusalon.github.io/RomaHub/" target="_blank" rel="noopener">Ver RomaHub →</a>
-        </article>
-        <!-- CONFIRMAR antes de publicar: el acceso a VentasRoma26 sin costo para quien tiene
-             suscripcion activa de RservasRoma es una regla comercial que hoy NO esta escrita en el
-             codigo de VentasRoma26 (alli la tienda nueva tiene 10 dias gratis). Si no se va a dar,
-             borrar esta tarjeta y la linea del precio. -->
-        <article class="feature">
-          <span class="icon">Vr</span>
-          <h3>VentasRoma26</h3>
-          <p>Tu tienda con catálogo y pedidos por WhatsApp, dentro del directorio de tiendas de Cuba. Pídela sin costo extra con tu suscripción activa.</p>
-          <a class="eco-link" href="https://ventasroma26.com" target="_blank" rel="noopener">Ver VentasRoma26 →</a>
-        </article>
-        <article class="feature">
-          <span class="icon">+</span>
-          <h3>Lo que viene</h3>
-          <p>Los próximos proyectos del ecosistema entran en tu suscripción, sin costo extra, apenas se lancen.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         PRECIO
-    ═══════════════════════════════════════════ -->
-    <section class="section" id="precios">
-      <div class="section-heading">
-        <h2>1,500 CUP al mes en Cuba. Sin letra pequeña.</h2>
-        <p>15 días de prueba gratis para probarlo sin compromiso. Un precio, todo el ecosistema.</p>
-      </div>
-      <div class="price-single">
-        <div class="price-single-tag">15 días gratis</div>
-        <p class="price-single-amount"><strong>1,500 CUP</strong><span>/mes</span></p>
-        <p class="price-single-note">Precio para negocios en Cuba. ¿Estás en otro país? <a href="https://wa.me/15154650340?text=Hola%2C%20quiero%20saber%20el%20precio%20de%20RservasRoma%20en%20mi%20pa%C3%ADs" target="_blank" rel="noopener">Consulta tu precio por WhatsApp</a>.</p>
-        <ul class="price-single-list">
-          <li>✓ Acceso completo a RservasRoma: reservas online, panel administrativo, anticipos, recordatorios y estadísticas</li>
-          <li>✓ Acceso a RomaFinanzas: cuánto ganas de verdad por servicio, precio recomendado y margen de ganancia</li>
-          <li>✓ Acceso a RomaCrece: qué publicar cada semana en Instagram, con 30 reels listos para grabar</li>
-          <li>✓ Tu salón en RomaHub, el directorio de la belleza de Cuba</li>
-          <li>✓ Tu tienda en VentasRoma26, sin costo extra con tu suscripción activa</li>
-          <li>✓ Acceso a los próximos proyectos del ecosistema, sin costo extra, apenas se lancen</li>
-          <li>✓ Soporte directo por WhatsApp</li>
-        </ul>
-        <a class="button primary price-single-cta" href="#crear">Empezar con 15 días gratis</a>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         FAQ
-    ═══════════════════════════════════════════ -->
-    <section class="section" id="faq">
-      <div class="section-heading">
-        <h2>Respuestas rápidas antes de dar el paso.</h2>
-      </div>
-      <div class="faq-list">
-        <details>
-          <summary>¿Qué incluye la prueba gratis y puedo cancelar?</summary>
-          <p>15 días de prueba completamente gratis — sin tarjeta, sin contrato. Reservas online, panel administrativo, servicios, profesionales y horarios desde el primer día. No hay permanencia mínima: cancelas cuando quieras, sin penalización.</p>
-        </details>
-        <details>
-          <summary>¿Funciona en Cuba?</summary>
-          <p>Sí, y fue diseñado especialmente para negocios en Cuba. Funciona con WhatsApp, sin depender de pasarelas de pago internacionales, soporta CUP y USD. Hoy hay salones usándolo en las 15 provincias del país, y el primero fuera de Cuba ya trabaja desde España.</p>
-        </details>
-        <details>
-          <summary>¿Cuánto cuesta y qué incluye?</summary>
-          <p>1,500 CUP al mes en Cuba, un solo precio con todo incluido: acceso completo a RservasRoma, RomaFinanzas (para saber cuánto ganas de verdad por servicio), RomaCrece (qué publicar cada semana en Instagram), tu lugar en RomaHub y tu tienda en VentasRoma26, y los próximos proyectos del ecosistema, sin costo extra. Si tu negocio está en otro país, escríbenos por WhatsApp y te decimos el precio.</p>
-        </details>
-        <details>
-          <summary>¿Cuánto tarda en estar lista mi app?</summary>
-          <p>Entre 24 y 72 horas desde que nos envías los datos del negocio: nombre del salón, WhatsApp, correo y si usarás Android o iOS. Nosotros hacemos todo el resto y te lo entregamos listo para compartir.</p>
-        </details>
-        <details>
-          <summary>¿Necesito instalar algo o pagar por hosting?</summary>
-          <p>No. Funciona como web instalable en Android e iOS — la clienta la añade a su pantalla de inicio como una app normal. No hay nada que descargar ni pagar de más. También puede entregarse como APK descargable para Android si el negocio lo necesita.</p>
-        </details>
-        <details>
-          <summary>¿Puede enviar recordatorios a mis clientas?</summary>
-          <p>Sí, de dos formas. La clienta que tiene la app y las notificaciones activadas recibe un aviso automático 24 horas y 1 hora antes de su cita. Y desde tu panel tienes mensajes listos para WhatsApp: turno de mañana, pago pendiente, seguimiento de ausencia y confirmación. Solo le das clic y lo envías.</p>
-        </details>
-        <details>
-          <summary>¿Sirve si tengo varios profesionales en el salón?</summary>
-          <p>Sí. Cada servicio se asigna a uno o varios profesionales, con sus propios horarios y permisos. Cada profesional entra con su cuenta y ve solo lo que le corresponde.</p>
-        </details>
-        <details>
-          <summary>¿Se puede cobrar anticipo para que no cancelen?</summary>
-          <p>Sí. Activas el anticipo por transferencia y la cita queda pendiente hasta que confirmes el pago. Si no llega, el turno se libera automáticamente y no pierdes el hueco.</p>
-        </details>
-        <details>
-          <summary>¿Mis clientas necesitan crear una cuenta?</summary>
-          <p>No necesitan contraseña. Entran con su número de WhatsApp, eligen servicio, día y hora, y listo.</p>
-        </details>
-        <details>
-          <summary>¿Puedo cambiar el logo, los colores y los mensajes después?</summary>
-          <p>Sí. Desde tu panel cambias logo, colores, imagen de fondo, nombre, servicios y tus mensajes de confirmación y de bienvenida cuando quieras.</p>
-        </details>
-        <details>
-          <summary>¿Cómo empiezo?</summary>
-          <p>Llena el formulario de abajo con los datos de tu salón. Te escribimos por WhatsApp en pocas horas para guiarte paso a paso. En 24–72 h tu app está lista.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         CÓMO EMPIEZA
-    ═══════════════════════════════════════════ -->
-    <section class="section" id="como-empieza">
-      <div class="section-heading">
-        <h2>Así empiezas, sin complicarte.</h2>
-        <p>No hay registro ni contraseñas que inventar: nosotros montamos tu app y te la entregamos lista.</p>
-      </div>
-      <ol class="steps">
-        <li>
-          <span class="icon">1</span>
-          <h3>Nos dejas 4 datos</h3>
-          <p>Nombre del salón, WhatsApp, correo y si usarás Android o iOS. Se hace en un minuto.</p>
-        </li>
-        <li>
-          <span class="icon">2</span>
-          <h3>Te escribimos por WhatsApp</h3>
-          <p>En pocas horas, para guiarte paso a paso con lo que necesita tu salón.</p>
-        </li>
-        <li>
-          <span class="icon">3</span>
-          <h3>Tu app, lista en 24–72 h</h3>
-          <p>Recibes tu enlace de reservas para compartir en Instagram, WhatsApp y estados, con 15 días gratis para probarla.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         URGENCIA ANTES DEL FORM
-    ═══════════════════════════════════════════ -->
-    <section class="section urgencia-band">
-      <div class="urgencia-inner">
-        <div>
-          <h2>Cada día sin RservasRoma es un turno que se pierde o un mensaje que queda sin responder.</h2>
-        </div>
-        <div class="urgencia-ctas">
-          <a class="button primary" href="#crear">Crear mi app — 15 días gratis</a>
-          <a class="button secondary" href="https://wa.me/15154650340?text=Hola%2C%20quiero%20crear%20mi%20app%20con%20RservasRoma" target="_blank" rel="noopener">Hablar por WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         FORMULARIO
-    ═══════════════════════════════════════════ -->
-    <section class="section form-section" id="crear">
-      <div class="contact-grid">
-        <div class="form-copy">
-          <h2>Crea tu app de reservas gratis.</h2>
-          <p>Solo necesitamos estos datos para empezar. Te escribimos por WhatsApp y en 24–72 h tienes tu sistema listo.</p>
-          <ul class="form-benefits">
-            <li>✓ 15 días de prueba sin pagar nada</li>
-            <li>✓ Sin tarjeta de crédito</li>
-            <li>✓ Lista en 24 a 72 horas</li>
-            <li>✓ Soporte directo por WhatsApp</li>
+          <ul class="hero-points" aria-label="Indicadores clave">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><strong>+350 negocios</strong> con su app en las 15 provincias</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Lista en 24–72 h</strong>, sin instalar nada</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><strong>+80 con reservas</strong> este mes</span></li>
           </ul>
         </div>
-        <form class="contact-form" id="businessForm">
-          <input type="hidden" name="rubro" id="rubro" value="">
-          <div class="field">
-            <label for="salon">Nombre del salón</label>
-            <input id="salon" name="salon" required placeholder="Ej: Nails by Roma">
-          </div>
-          <div class="field">
-            <label for="whatsapp">WhatsApp</label>
-            <input id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="+53 5...">
-          </div>
-          <div class="field">
-            <label for="email">Correo electrónico</label>
-            <input id="email" name="email" required type="email" placeholder="correo@ejemplo.com">
-          </div>
-          <div class="field">
-            <label>¿En qué instalarás la app?</label>
-            <div class="platform-toggle" role="radiogroup" aria-label="Sistema operativo del celular">
-              <input type="radio" id="platform-android" name="plataforma" value="Android" required>
-              <label for="platform-android" class="platform-option">🤖 Android</label>
-              <input type="radio" id="platform-ios" name="plataforma" value="iOS" required>
-              <label for="platform-ios" class="platform-option">🍎 iOS</label>
+
+        <div class="hero-visual">
+          <div class="stage" aria-hidden="true"></div>
+
+          <!-- La app que ve tu clienta, dibujada aqui. Datos de ejemplo. -->
+          <div class="phone" id="demo" role="group" aria-label="Ejemplo de la página de reservas de un salón">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="app">
+              <div class="app-head">
+                <span class="app-logo" aria-hidden="true">NR</span>
+                <div>
+                  <strong>Nails by Roma</strong>
+                  <small>Reserva tu turno</small>
+                </div>
+              </div>
+
+              <p class="app-label">Servicio</p>
+              <div class="app-services">
+                <button type="button" data-pick="servicio" aria-pressed="true"><span>Semipermanente</span><small>45 min</small></button>
+                <button type="button" data-pick="servicio" aria-pressed="false"><span>Esmaltado tradicional</span><small>30 min</small></button>
+                <button type="button" data-pick="servicio" aria-pressed="false"><span>Diseño de uñas</span><small>60 min</small></button>
+              </div>
+
+              <p class="app-label">Día</p>
+              <div class="app-days">
+                <button type="button" data-pick="dia" aria-pressed="false"><small>Lun</small><span>14</span></button>
+                <button type="button" data-pick="dia" aria-pressed="true"><small>Mar</small><span>15</span></button>
+                <button type="button" data-pick="dia" aria-pressed="false"><small>Mié</small><span>16</span></button>
+                <button type="button" data-pick="dia" aria-pressed="false"><small>Jue</small><span>17</span></button>
+              </div>
+
+              <p class="app-label">Hora disponible</p>
+              <div class="app-hours">
+                <button type="button" data-pick="hora" aria-pressed="false">10:00</button>
+                <button type="button" data-pick="hora" aria-pressed="false">11:30</button>
+                <button type="button" data-pick="hora" aria-pressed="true">3:00 pm</button>
+                <button type="button" data-pick="hora" aria-pressed="false" disabled>4:30 pm</button>
+              </div>
+
+              <button class="app-confirm" type="button" id="demoConfirm">Reservar</button>
+              <p class="app-done" id="demoDone" role="status"></p>
             </div>
           </div>
-          <div class="form-actions">
-            <button class="button primary" type="submit" style="flex:1">Enviar por WhatsApp 🚀</button>
-            <button class="button secondary" type="button" id="copyRequest">Copiar</button>
+
+          <div class="float float-reminder" aria-hidden="true">
+            <span class="float-icon"><svg class="i"><use href="#i-bell"/></svg></span>
+            <div>
+              <strong>Mañana tienes cita</strong>
+              <small>Nails by Roma · 3:00 pm</small>
+            </div>
           </div>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
-        <div class="thanks" id="thanks" role="status" hidden>
-          <h3>¡Listo! Recibimos tu solicitud 💗</h3>
-          <p>Te escribimos por WhatsApp en pocas horas. Si no se abrió WhatsApp, escríbenos tú con este botón:</p>
-          <a class="button primary" id="thanksWhatsapp" href="https://wa.me/15154650340" target="_blank" rel="noopener">Abrir WhatsApp</a>
-          <ol class="thanks-steps">
-            <li>Te escribimos y te guiamos paso a paso.</li>
-            <li>Montamos tu app: queda lista en 24–72 h.</li>
-            <li>Recibes tu enlace y empiezas tus 15 días gratis.</li>
-          </ol>
-          <a class="eco-link" href="https://chat.whatsapp.com/E8S5IQrEHSEIq7Yt2jFiG1?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4" target="_blank" rel="noopener">Unirme a La Casa de la Comunidad →</a>
+          <div class="float float-paid" aria-hidden="true">
+            <span class="float-icon is-ok"><svg class="i"><use href="#i-check"/></svg></span>
+            <div>
+              <strong>Anticipo recibido</strong>
+              <small>Camila · Semipermanente</small>
+            </div>
+          </div>
+          <p class="demo-note">Ejemplo ilustrativo con datos inventados. Toca para probarlo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="section problem">
+      <div class="wrap split">
+        <h2>Llevas la agenda en la cabeza, el WhatsApp lleno y tres clientas esperando respuesta al mismo tiempo.</h2>
+        <ul class="before-after">
+          <li><svg class="i is-no" aria-hidden="true"><use href="#i-x"/></svg>Confirmar cada cita a mano por WhatsApp</li>
+          <li><svg class="i is-no" aria-hidden="true"><use href="#i-x"/></svg>Clientas que olvidan el turno y no avisan</li>
+          <li><svg class="i is-no" aria-hidden="true"><use href="#i-x"/></svg>Huecos perdidos sin cobrar anticipo</li>
+          <li class="is-yes"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Con RservasRoma, se reservan solas</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PLATAFORMA -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Un enlace. Tu clienta reserva. Tú recibes la cita organizada.</h2>
+          <p>Sin apps que descargar, sin pasarelas de pago extranjeras, sin contratos. Solo tu salón funcionando de forma profesional.</p>
+        </div>
+
+        <div class="bento">
+          <article class="tile t-link">
+            <h3>Tu página de reservas</h3>
+            <p>Enlace propio con tus servicios, profesionales, disponibilidad real y diseño de tu marca. Lo compartes en Instagram, WhatsApp o estados.</p>
+            <div class="viz" aria-hidden="true">
+              <div class="mini-card">
+                <span class="app-logo">NR</span>
+                <div><strong>Nails by Roma</strong><small>Reserva tu turno</small></div>
+                <span class="mini-go">Reservar</span>
+              </div>
+              <div class="share">
+                <span class="pill-link"><svg class="i"><use href="#i-link"/></svg>Tu enlace de reservas</span>
+                <span class="chip">Instagram</span><span class="chip">WhatsApp</span><span class="chip">Estados</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tile t-night">
+            <h3>Reserva 24/7</h3>
+            <p>La clienta elige turno aunque estés atendiendo, descansando o durmiendo. Sin mensajes de ida y vuelta.</p>
+            <ul class="viz feed" aria-hidden="true">
+              <li><span class="dot"><svg class="i"><use href="#i-moon"/></svg></span><div><strong>Camila reservó</strong><small>Semipermanente · 11:42 pm</small></div></li>
+              <li><span class="dot"><svg class="i"><use href="#i-moon"/></svg></span><div><strong>Daniela reservó</strong><small>Diseño de uñas · 6:05 am</small></div></li>
+            </ul>
+          </article>
+
+          <article class="tile t-pay">
+            <h3>Cobros y anticipos</h3>
+            <p>Activa el anticipo y la cita queda pendiente hasta que confirmes el pago. El turno se libera solo si no llega.</p>
+            <div class="viz" aria-hidden="true">
+              <div class="mini-card is-col">
+                <div class="mini-row"><strong>Camila</strong><small>Semipermanente · 3:00 pm</small></div>
+                <div class="flow">
+                  <span class="status is-pending">Pendiente de pago</span>
+                  <svg class="i"><use href="#i-arrow"/></svg>
+                  <span class="status is-done">Pago confirmado</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="tile t-agenda">
+            <h3>Agenda y estadísticas</h3>
+            <p>Ve el día, la semana o el mes de un vistazo. Cuánto cobras, qué servicio rinde más y quiénes faltan.</p>
+            <ul class="viz agenda" aria-hidden="true">
+              <li><time>10:00</time><span>Camila · Semipermanente</span><span class="status is-done">Completada</span></li>
+              <li><time>11:30</time><span>Daniela · Diseño de uñas</span><span class="status is-pending">Pendiente</span></li>
+              <li><time>1:00 pm</time><span>Lía · Esmaltado</span><span class="status is-miss">Ausencia</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="bento-note">Ejemplos ilustrativos con nombres y datos inventados.</p>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Diseñado para negocios que viven de una agenda ordenada.</h2>
+        </div>
+        <ul class="rubros">
+          <li>
+            <div><h3>Manicuristas</h3><p>Servicios por duración, combos, anticipos y disponibilidad real.</p></div>
+            <a class="text-link" href="#crear" data-rubro="Manicura">Quiero mi app<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li>
+            <div><h3>Barberías</h3><p>Turnos rápidos, varios profesionales, recordatorios y clientes recurrentes.</p></div>
+            <a class="text-link" href="#crear" data-rubro="Barbería">Quiero mi app<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li>
+            <div><h3>Peluquerías</h3><p>Reservas largas, múltiples servicios y control por profesional.</p></div>
+            <a class="text-link" href="#crear" data-rubro="Peluquería">Quiero mi app<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li>
+            <div><h3>Lashes y estética</h3><p>Citas detalladas, cobro de anticipo y seguimiento de ausencias.</p></div>
+            <a class="text-link" href="#crear" data-rubro="Lashes y estética">Quiero mi app<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li>
+            <div><h3>Salones generales</h3><p>Una agenda para varios servicios, equipos y horarios distintos.</p></div>
+            <a class="text-link" href="#crear" data-rubro="Salón general">Quiero mi app<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li>
+            <div><h3>Academias</h3><p>Clases, cupos, registros, comunicación y cobros organizados.</p></div>
+            <a class="text-link" href="#crear" data-rubro="Academia">Quiero mi app<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="section" id="testimonios">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Lo que cuentan las dueñas.</h2>
+        </div>
+        <div class="quotes">
+          <figure>
+            <blockquote>“Antes perdía horas confirmando citas por WhatsApp. Ahora las clientas reservan solas y yo recibo la notificación. En serio, cambió todo.”</blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">Y</span>
+              <span><strong>Yuliet M.</strong>Exotic Nails · La Habana, Cuba</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <blockquote>“Por muy poco cada mes tengo una app con mi nombre, mis colores y mis servicios. Las clientas piensan que invertí miles. Lo recomiendo sin dudar.”</blockquote>
+            <figcaption>
+              <span class="avatar" aria-hidden="true">C</span>
+              <span><strong>Carla R.</strong>Nails Carla Salon · Cuba</span>
+            </figcaption>
+          </figure>
+          <!-- Quitado el 13/10/2026: Leci N. (Leci's Nails) decia "las ausencias bajaron a cero".
+               Sus datos no lo respaldan (2 reservas en junio, 0 ausencias) y no hay un antes y un
+               despues medido. Volver a poner un testimonio de anticipos solo con una frase real
+               y con permiso de la duena. -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCIONES -->
+    <section class="section alt" id="funciones">
+      <div class="wrap">
+        <div class="feat-head">
+          <div class="section-head">
+            <h2>Una sola herramienta para manejar el salón completo.</h2>
+            <p>Lo que ve tu clienta, lo que ves tú y lo que lleva tu marca.</p>
+          </div>
+          <div class="feat-phone">
+          <div class="phone phone-sm" aria-hidden="true">
+            <div class="phone-notch"></div>
+            <div class="app">
+              <div class="app-head"><span class="app-logo">NR</span><div><strong>Agenda de hoy</strong><small>Panel del salón</small></div></div>
+              <ul class="agenda">
+                <li><time>10:00</time><span>Camila · Semipermanente</span><span class="status is-done">Completada</span></li>
+                <li><time>11:30</time><span>Daniela · Diseño de uñas</span><span class="status is-pending">Pendiente</span></li>
+                <li><time>1:00 pm</time><span>Lía · Esmaltado</span><span class="status is-miss">Ausencia</span></li>
+              </ul>
+              <div class="mini-card"><span class="float-icon"><svg class="i"><use href="#i-bell"/></svg></span><div><strong>Recordatorio listo</strong><small>Turno de mañana por WhatsApp</small></div></div>
+            </div>
+          </div>
+          <p class="demo-note">Ejemplo ilustrativo con datos inventados.</p>
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature-col">
+            <h3>Para tus clientas</h3>
+            <dl>
+              <dt>Reservas online 24/7</dt>
+              <dd>La clienta elige servicio, profesional, fecha y hora según la disponibilidad real del negocio — sin necesitar tu ayuda.</dd>
+              <dt>Recordatorios automáticos</dt>
+              <dd>La clienta recibe un aviso en su celular 24 horas y 1 hora antes de su cita, si tiene la app instalada y las notificaciones activadas. Tú además tienes mensajes listos para WhatsApp: turno de mañana, pago pendiente, ausencia y seguimiento.</dd>
+              <dt>Lista de espera</dt>
+              <dd>Si un turno ocupado se libera, la admin recibe aviso con la clienta interesada. Así no pierdes el hueco.</dd>
+            </dl>
+          </div>
+          <div class="feature-col">
+            <h3>Para tu día a día</h3>
+            <dl>
+              <dt>Panel administrativo</dt>
+              <dd>Agenda diaria, calendario, citas pendientes, completadas, canceladas, ausencias y cobro real — todo en un lugar.</dd>
+              <dt>Profesionales y permisos</dt>
+              <dd>Cada profesional entra con su cuenta y ve solo lo que el negocio le permite. Privacidad y control total.</dd>
+              <dt>Anticipos y cobro real</dt>
+              <dd>Activa el anticipo por transferencia. La reserva queda pendiente y el turno se libera solo si no llega el pago.</dd>
+              <dt>Estadísticas reales</dt>
+              <dd>Resumen semanal, mensual y anual de cobros, citas completadas, canceladas, ausencias y rendimiento por servicio.</dd>
+              <dt>Clientas nuevas</dt>
+              <dd>Un panel te muestra quién acaba de hacer su primera reserva y, con un toque, le abres WhatsApp con la bienvenida ya escrita.</dd>
+            </dl>
+          </div>
+          <div class="feature-col">
+            <h3>Para tu marca</h3>
+            <dl>
+              <dt>Marca 100% propia</dt>
+              <dd>Logo, colores, imagen de fondo, nombre, mensajes y servicios personalizados. Tu clienta ve TU salón, no una app genérica.</dd>
+              <dt>Tus propios mensajes</dt>
+              <dd>Escribe tu mensaje de confirmación de cita y tu bienvenida para clientas nuevas, o deja los de siempre. Tú decides.</dd>
+              <dt>Fidelidad y cumpleaños</dt>
+              <dd>Premia a tus clientas recurrentes con un descuento cada cierto número de citas y ofrece una bonificación en su cumpleaños.</dd>
+              <dt>Android e iOS</dt>
+              <dd>Funciona como web instalable en cualquier celular. También puede prepararse como APK descargable para Android.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ECOSISTEMA -->
+    <section class="section ecosystem" id="ecosistema">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Una suscripción, todo el ecosistema Roma.</h2>
+          <p>Además de tu app de reservas, tienes herramientas para saber cuánto ganas, qué publicar y dónde te encuentran tus clientas.</p>
+        </div>
+        <ul class="eco-list">
+          <li>
+            <span class="mono" aria-hidden="true"><svg class="i"><use href="#i-cal"/></svg></span>
+            <div>
+              <h3>RservasRoma</h3>
+              <p>Tu app de reservas con tu marca: reservas 24/7, panel, anticipos, lista de espera, clientas nuevas y recordatorios.</p>
+            </div>
+          </li>
+          <li>
+            <span class="mono" aria-hidden="true"><svg class="i"><use href="#i-chart"/></svg></span>
+            <div>
+              <h3>RomaFinanzas</h3>
+              <p>Conoce cuánto te queda limpio en cada servicio: fichas de costo, precio recomendado y margen de ganancia, con tus ingresos de RservasRoma.</p>
+              <a class="text-link" href="https://tusalon.github.io/RomaFinanzas/" target="_blank" rel="noopener">Ver RomaFinanzas<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li>
+            <span class="mono" aria-hidden="true"><svg class="i"><use href="#i-trend"/></svg></span>
+            <div>
+              <h3>RomaCrece</h3>
+              <p>Qué publicar esta semana en Instagram: auditoría de tu cuenta, ideas, planificador semanal, 30 reels listos para grabar y seguimiento de resultados.</p>
+              <a class="text-link" href="https://tusalon.github.io/RomaCrece/" target="_blank" rel="noopener">Ver RomaCrece<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li>
+            <span class="mono" aria-hidden="true"><svg class="i"><use href="#i-pin"/></svg></span>
+            <div>
+              <h3>RomaHub</h3>
+              <p>El directorio de la belleza de Cuba: tu salón visible para quienes buscan servicios, precios, productos y cursos.</p>
+              <a class="text-link" href="https://tusalon.github.io/RomaHub/" target="_blank" rel="noopener">Ver RomaHub<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <!-- CONFIRMAR antes de publicar: el acceso a VentasRoma26 sin costo para quien tiene
+               suscripcion activa de RservasRoma es una regla comercial que hoy NO esta escrita en el
+               codigo de VentasRoma26 (alli la tienda nueva tiene 10 dias gratis). Si no se va a dar,
+               borrar esta tarjeta y la linea del precio. -->
+          <li>
+            <span class="mono" aria-hidden="true"><svg class="i"><use href="#i-bag"/></svg></span>
+            <div>
+              <h3>VentasRoma26</h3>
+              <p>Tu tienda con catálogo y pedidos por WhatsApp, dentro del directorio de tiendas de Cuba. Pídela sin costo extra con tu suscripción activa.</p>
+              <a class="text-link" href="https://ventasroma26.com" target="_blank" rel="noopener">Ver VentasRoma26<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li>
+            <span class="mono" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span>
+            <div>
+              <h3>Lo que viene</h3>
+              <p>Los próximos proyectos del ecosistema entran en tu suscripción, sin costo extra, apenas se lancen.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRECIO -->
+    <section class="section" id="precios">
+      <div class="wrap">
+        <div class="section-head center">
+          <h2>1,500 CUP al mes en Cuba. Sin letra pequeña.</h2>
+          <p>15 días de prueba gratis para probarlo sin compromiso. Un precio, todo el ecosistema.</p>
+        </div>
+        <div class="price">
+          <span class="badge">15 días gratis</span>
+          <p class="price-amount"><strong>1,500 CUP</strong><span>/mes</span></p>
+          <p class="price-note">Precio para negocios en Cuba. ¿Estás en otro país? <a href="https://wa.me/15154650340?text=Hola%2C%20quiero%20saber%20el%20precio%20de%20RservasRoma%20en%20mi%20pa%C3%ADs" target="_blank" rel="noopener">Consulta tu precio por WhatsApp</a>.</p>
+          <ul class="price-list">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Acceso completo a RservasRoma: reservas online, panel administrativo, anticipos, recordatorios y estadísticas</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Acceso a RomaFinanzas: cuánto ganas de verdad por servicio, precio recomendado y margen de ganancia</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Acceso a RomaCrece: qué publicar cada semana en Instagram, con 30 reels listos para grabar</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tu salón en RomaHub, el directorio de la belleza de Cuba</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tu tienda en VentasRoma26, sin costo extra con tu suscripción activa</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Acceso a los próximos proyectos del ecosistema, sin costo extra, apenas se lancen</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Soporte directo por WhatsApp</li>
+          </ul>
+          <a class="button primary block" href="#crear">Empezar con 15 días gratis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO EMPIEZA -->
+    <section class="section on-brand" id="como-empieza">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Así empiezas, sin complicarte.</h2>
+          <p>No hay registro ni contraseñas que inventar: nosotros montamos tu app y te la entregamos lista.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-n">1</span>
+            <h3>Nos dejas 4 datos</h3>
+            <p>Nombre del salón, WhatsApp, correo y si usarás Android o iOS. Se hace en un minuto.</p>
+          </li>
+          <li>
+            <span class="step-n">2</span>
+            <h3>Te escribimos por WhatsApp</h3>
+            <p>En pocas horas, para guiarte paso a paso con lo que necesita tu salón.</p>
+          </li>
+          <li>
+            <span class="step-n">3</span>
+            <h3>Tu app, lista en 24–72 h</h3>
+            <p>Recibes tu enlace de reservas para compartir en Instagram, WhatsApp y estados, con 15 días gratis para probarla.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap split faq">
+        <div class="faq-head">
+          <h2>Respuestas rápidas antes de dar el paso.</h2>
+          <p>¿Algo más? <a href="https://wa.me/15154650340" target="_blank" rel="noopener">Escríbenos por WhatsApp</a> y te respondemos.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>¿Qué incluye la prueba gratis y puedo cancelar?</summary>
+            <p>15 días de prueba completamente gratis — sin tarjeta, sin contrato. Reservas online, panel administrativo, servicios, profesionales y horarios desde el primer día. No hay permanencia mínima: cancelas cuando quieras, sin penalización.</p>
+          </details>
+          <details>
+            <summary>¿Funciona en Cuba?</summary>
+            <p>Sí, y fue diseñado especialmente para negocios en Cuba. Funciona con WhatsApp, sin depender de pasarelas de pago internacionales, soporta CUP y USD. Hoy hay salones usándolo en las 15 provincias del país, y el primero fuera de Cuba ya trabaja desde España.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta y qué incluye?</summary>
+            <p>1,500 CUP al mes en Cuba, un solo precio con todo incluido: acceso completo a RservasRoma, RomaFinanzas (para saber cuánto ganas de verdad por servicio), RomaCrece (qué publicar cada semana en Instagram), tu lugar en RomaHub y tu tienda en VentasRoma26, y los próximos proyectos del ecosistema, sin costo extra. Si tu negocio está en otro país, escríbenos por WhatsApp y te decimos el precio.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto tarda en estar lista mi app?</summary>
+            <p>Entre 24 y 72 horas desde que nos envías los datos del negocio: nombre del salón, WhatsApp, correo y si usarás Android o iOS. Nosotros hacemos todo el resto y te lo entregamos listo para compartir.</p>
+          </details>
+          <details>
+            <summary>¿Necesito instalar algo o pagar por hosting?</summary>
+            <p>No. Funciona como web instalable en Android e iOS — la clienta la añade a su pantalla de inicio como una app normal. No hay nada que descargar ni pagar de más. También puede entregarse como APK descargable para Android si el negocio lo necesita.</p>
+          </details>
+          <details>
+            <summary>¿Puede enviar recordatorios a mis clientas?</summary>
+            <p>Sí, de dos formas. La clienta que tiene la app y las notificaciones activadas recibe un aviso automático 24 horas y 1 hora antes de su cita. Y desde tu panel tienes mensajes listos para WhatsApp: turno de mañana, pago pendiente, seguimiento de ausencia y confirmación. Solo le das clic y lo envías.</p>
+          </details>
+          <details>
+            <summary>¿Sirve si tengo varios profesionales en el salón?</summary>
+            <p>Sí. Cada servicio se asigna a uno o varios profesionales, con sus propios horarios y permisos. Cada profesional entra con su cuenta y ve solo lo que le corresponde.</p>
+          </details>
+          <details>
+            <summary>¿Se puede cobrar anticipo para que no cancelen?</summary>
+            <p>Sí. Activas el anticipo por transferencia y la cita queda pendiente hasta que confirmes el pago. Si no llega, el turno se libera automáticamente y no pierdes el hueco.</p>
+          </details>
+          <details>
+            <summary>¿Mis clientas necesitan crear una cuenta?</summary>
+            <p>No necesitan contraseña. Entran con su número de WhatsApp, eligen servicio, día y hora, y listo.</p>
+          </details>
+          <details>
+            <summary>¿Puedo cambiar el logo, los colores y los mensajes después?</summary>
+            <p>Sí. Desde tu panel cambias logo, colores, imagen de fondo, nombre, servicios y tus mensajes de confirmación y de bienvenida cuando quieras.</p>
+          </details>
+          <details>
+            <summary>¿Cómo empiezo?</summary>
+            <p>Llena el formulario de abajo con los datos de tu salón. Te escribimos por WhatsApp en pocas horas para guiarte paso a paso. En 24–72 h tu app está lista.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="signup" id="crear">
+      <div class="wrap signup-grid">
+        <div class="signup-copy">
+          <h2>Crea tu app de reservas gratis.</h2>
+          <p>Solo necesitamos estos datos para empezar. Te escribimos por WhatsApp y en 24–72 h tienes tu sistema listo.</p>
+          <ul class="signup-points">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>15 días de prueba sin pagar nada</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Sin tarjeta de crédito</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Lista en 24 a 72 horas</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Soporte directo por WhatsApp</li>
+          </ul>
+          <a class="wa-link" href="https://wa.me/15154650340?text=Hola%2C%20quiero%20crear%20mi%20app%20con%20RservasRoma" target="_blank" rel="noopener">¿Prefieres hablar con una persona? Escríbenos por WhatsApp<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <div class="signup-card">
+          <form class="contact-form" id="businessForm">
+            <input type="hidden" name="rubro" id="rubro" value="">
+            <div class="field">
+              <label for="salon">Nombre del salón</label>
+              <input id="salon" name="salon" required placeholder="Ej: Nails by Roma" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="whatsapp">WhatsApp</label>
+              <input id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="+53 5..." autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" required type="email" placeholder="correo@ejemplo.com" autocomplete="email">
+            </div>
+            <div class="field">
+              <span class="label" id="platformLabel">¿En qué instalarás la app?</span>
+              <div class="platform-toggle" role="radiogroup" aria-labelledby="platformLabel">
+                <input type="radio" id="platform-android" name="plataforma" value="Android" required>
+                <label for="platform-android" class="platform-option">Android</label>
+                <input type="radio" id="platform-ios" name="plataforma" value="iOS" required>
+                <label for="platform-ios" class="platform-option">iOS</label>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="button primary" type="submit">Enviar por WhatsApp</button>
+              <button class="button ghost" type="button" id="copyRequest">Copiar</button>
+            </div>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+          <div class="thanks" id="thanks" role="status" hidden>
+            <h3>Listo, recibimos tu solicitud.</h3>
+            <p>Te escribimos por WhatsApp en pocas horas. Si no se abrió WhatsApp, escríbenos tú con este botón:</p>
+            <a class="button primary" id="thanksWhatsapp" href="https://wa.me/15154650340" target="_blank" rel="noopener">Abrir WhatsApp</a>
+            <ol class="thanks-steps">
+              <li>Te escribimos y te guiamos paso a paso.</li>
+              <li>Montamos tu app: queda lista en 24–72 h.</li>
+              <li>Recibes tu enlace y empiezas tus 15 días gratis.</li>
+            </ol>
+            <a class="text-link" href="https://chat.whatsapp.com/E8S5IQrEHSEIq7Yt2jFiG1?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4" target="_blank" rel="noopener">Unirme a La Casa de la Comunidad<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
   <footer class="site-footer">
-    <div class="footer-inner">
+    <div class="wrap footer-inner">
       <div class="footer-brand">
         <strong>RservasRoma</strong>
         <p>La app de reservas para salones de belleza. Más de 350 negocios con su app en las 15 provincias de Cuba.</p>
-        <a class="button primary" href="#crear" style="margin-top:16px;display:inline-flex;width:auto;padding:10px 18px;font-size:14px">Prueba 15 días gratis</a>
+        <a class="button light small" href="#crear">Prueba 15 días gratis</a>
       </div>
       <div class="footer-col">
         <h3>Producto</h3>
         <a href="#funciones">Funciones</a>
-        <a href="#galeria">Capturas</a>
+        <a href="#ecosistema">Qué incluye</a>
         <a href="#precios">Precio</a>
       </div>
       <div class="footer-col">
@@ -598,20 +616,20 @@
       </div>
       <div class="footer-col">
         <h3>Disponible en</h3>
-        <span>🇨🇺 Cuba — las 15 provincias</span>
-        <span>🇪🇸 España</span>
+        <span>Cuba — las 15 provincias</span>
+        <span>España</span>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="wrap footer-bottom">
       <!-- Rango, no ano suelto: el sitio existe desde 2025 y sigue vivo. Al pasar
            de ano se actualiza el segundo numero a mano; ponerlo por JS dejaria
            un aviso legal dependiendo de que el script cargue. -->
       <span>© 2025–2026 RservasRoma · Todos los derechos reservados</span>
-      <span>Hecho con 💖 para estilistas que merecen más</span>
+      <span>Hecho para estilistas que merecen más</span>
     </div>
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/15154650340?text=Hola%2C%20quiero%20crear%20mi%20sistema%20de%20reservas%20con%20RservasRoma" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="floating-whatsapp" href="https://wa.me/15154650340?text=Hola%2C%20quiero%20crear%20mi%20sistema%20de%20reservas%20con%20RservasRoma" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a>
 
   <button class="install-button" id="installButton" hidden>Instalar web</button>
 

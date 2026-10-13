@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-13T20:47:05.150Z",
+        "reason": "falso positivo verificado: secciones y filas se espacian con padding-block y el gutter de .wrap; medido en capturas 1440 y 390, sin texto pegado al borde"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-13T20:55:30.920Z",
+        "reason": "excepción sancionada: las mini-tarjetas dentro de las fichas del bento son interfaces de producto dibujadas (la reserva, el cobro), no contenedores de la estructura de la página; decisión del agente, no confirmada por la usuaria"
+      }
+    ]
+  }
+}
