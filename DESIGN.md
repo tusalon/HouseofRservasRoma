@@ -157,39 +157,40 @@ Una web de producto limpia, al nivel de acabado de Fresha y Booksy, que demuestr
 Blanco con un tinte rosado, tinta ciruela casi negra y fucsia en superficies grandes. El fucsia no es un acento tímido: pinta campos enteros (los pasos y el cierre con el formulario), mientras una banda ciruela oscura corta el ritmo en el ecosistema y el pie. Los titulares van en Bricolage Grotesque, con carácter propio; el cuerpo en Inter. Radios amplios, sombras suaves con desplazamiento vertical, iconos de un solo trazo dibujados en SVG, sin emoji.
 
 **Key Characteristics:**
-- Fondo blanco y `wash` rosado alternados; fucsia pleno solo en dos campos (pasos, alta) y en el CTA.
-- Fucsia en tres trabajos con tres exigencias de contraste, nunca intercambiables.
+- Fondo blanco y marfil alternados; ciruela en ecosistema y alta; rosa solo en lo que se pulsa y dorado como acento.
+- Rosa en tres trabajos con tres exigencias de contraste, nunca intercambiables.
 - Demostración dibujada: teléfono, tarjetas flotantes y mini-interfaces dentro de las baldosas bento.
 - Esquinas generosas (14 a 44px) y píldoras para todo lo que se pulsa.
 - Un solo momento de movimiento autorado, respetando `prefers-reduced-motion`.
 
 ## Colors
 
-Rosa saturado sobre blanco rosado y ciruela. Toda la paleta tiene tinte magenta, incluidos los neutros; el único color ajeno es el verde de estado y el de WhatsApp.
+Ciruela profundo como base, rosa solo para actuar, dorado champagne como acento y marfil cálido en lugar del blanco rosado. Paleta contrastada con aliciasnailstudio.com (borgoña `#580F1A`, crema `#F7F3EE`, dorado `#C9A86A`, medida con REA el 28/10/2026): lo "premium" de ese sitio viene de una base oscura con un solo acento cálido, no de un rosa saturado a todo color.
 
 ### Primary
-- **Fucsia de Superficie** (`{colors.brand}`): viste tintes, bordes, la línea punteada entre pasos, el subrayado de columna y el borde de la tarjeta de precio. No lleva texto blanco (4.0:1) ni hace de texto.
-- **Fucsia de Acción** (`{colors.brand-cta}`): toda superficie con texto blanco: botón primario, CTA del menú, fila destacada del problema, avatar, y los dos campos a sangre (pasos y alta). 4.87:1 con blanco.
-- **Fucsia de Tinta** (`{colors.brand-ink}`): el rosa como texto sobre claro, el hover de los botones, el anillo de foco y el `+` del FAQ. 5.89:1 sobre blanco.
-- **Tinte** (`{colors.brand-tint}`): fondo de la baldosa del enlace, del escenario tras el teléfono, de los iconos pequeños, de la selección y del estado pendiente.
-- **Rosa sobre Ciruela** (`{colors.brand-on-plum}`): iconos y enlaces dentro de las bandas oscuras.
+- **Fucsia de Superficie** (`{colors.brand}` `#e83387`): la identidad. Logo del ecosistema, brillo del bloque de alta y tintes. No lleva texto blanco ni hace de texto.
+- **Frambuesa de Acción** (`{colors.brand-cta}` `#c41e6a`): toda superficie con texto blanco: botón primario y CTA del menú. 5.61:1 con blanco.
+- **Frambuesa de Tinta** (`{colors.brand-ink}` `#a3135a`): el rosa como texto sobre claro, hover de botones, anillo de foco y `+` del FAQ. 7.5:1 sobre blanco.
+- **Tinte** (`{colors.brand-tint}` `#fbe6ef`): selección, estado activo de la maqueta y mitad del degradado de la baldosa del enlace.
 
 ### Secondary
-- **Ciruela** (`{colors.plum}`): banda del ecosistema y la baldosa nocturna del bento. **Ciruela Profunda** (`{colors.plum-deep}`): el pie.
-- Texto sobre ciruela: `{colors.on-plum}` para el principal, `{colors.on-plum-muted}` para el secundario.
+- **Ciruela** (`{colors.plum}` `#321024`) y **Ciruela Profunda** (`{colors.plum-deep}` `#200a17`): ecosistema, baldosa nocturna, fila destacada del problema, bloque de alta, logo de la maqueta, avatares, círculos de pasos y pie. Texto sobre ciruela: `{colors.on-plum}` y `{colors.on-plum-muted}` (9.2:1).
+- **Dorado champagne** (`{colors.gold}` `#c9a86a`, `{colors.gold-soft}` `#e8d5a8`): iconos, enlaces y checks sobre ciruela (11.8:1), borde de la tarjeta de precio, subrayado de columnas, línea de pasos y botón claro del pie (degradado `--gold-grad`).
+- **Dorado de tinta** (`{colors.gold-ink}` `#7a5516`) sobre **Fondo dorado** (`{colors.gold-bg}` `#f6ecd2`): badge «15 días gratis», estado pendiente e iconos de listas sobre claro.
 
 ### Tertiary
-- **Estado**: `{colors.ok-bg}` / `{colors.ok-ink}` (hecho, anticipo recibido, badge de prueba gratis, éxito del formulario) y `{colors.miss-bg}` / `{colors.miss-ink}` (cita perdida, error).
+- **Estado**: `{colors.ok-bg}` / `{colors.ok-ink}` (hecho, anticipo recibido, éxito del formulario) y `{colors.miss-bg}` / `{colors.miss-ink}` (cita perdida, error). **Pendiente** es dorado.
 - **WhatsApp** (`{colors.whatsapp}`): solo el botón flotante, con texto tinta, nunca blanco.
 
 ### Neutral
-- **Tinta** (`{colors.ink}`): texto, marco del teléfono, botón de instalar. **Tinta Suave** (`{colors.ink-soft}`): párrafos. **Apagado** (`{colors.muted}`): pies, notas, placeholders.
-- **Línea** (`{colors.line}`): único separador, 1px. **Papel** (`{colors.paper}`) y **Wash** (`{colors.wash}`): fondo, secciones alternas, campos y citas.
+- **Tinta** `#231320`, **Tinta Suave** `#4d4048`, **Apagado** `#6b5d66`; **Línea** `#ebdfd8`; **Papel** blanco y **Marfil** (`{colors.wash}` `#faf5f1`) para secciones alternas, campos y citas. Los neutros tienen tinte cálido, no rosado.
 
 ### Named Rules
-**La Regla de los Tres Trabajos.** El fucsia tiene tres tokens porque hace tres trabajos: superficie (`brand`), superficie bajo texto blanco (`brand-cta`) y texto sobre claro (`brand-ink`). El token equivocado no se ve mal; falla contraste en silencio.
+**La Regla de las Tres Frambuesas.** El rosa tiene tres tokens (superficie, acción con texto blanco, tinta sobre claro). El token equivocado no se ve mal; falla contraste en silencio.
 
-**La Regla del Campo.** El fucsia pleno ocupa secciones enteras solo en los dos momentos de conversión (pasos y alta). Una tercera banda fucsia diluye las dos.
+**La Regla del Rosa que Actúa.** El rosa aparece donde se pulsa: botón primario, CTA del menú, enlaces, foco. Ya no hay campos a sangre en rosa; las dos conversiones (pasos y alta) se anuncian con marfil y ciruela, y el dorado hace de acento.
+
+**La Regla del Dorado Escaso.** El dorado marca lo que vale (precio, checks, enlaces del ecosistema, números de pasos). Nunca como fondo de una sección ni como texto sobre blanco sin `gold-ink`.
 
 **La Regla del Verde Prestado.** El verde de WhatsApp solo abre WhatsApp. El verde de estado solo comunica estado.
 
@@ -216,7 +217,7 @@ Rosa saturado sobre blanco rosado y ciruela. Toda la paleta tiene tinte magenta,
 
 ## Layout
 
-Contenedor de 1200px con gutter fluido `clamp(20px, 5vw, 48px)`. Secciones con aire vertical `clamp(64px, 9vw, 120px)`; alternan blanco y `wash`, con la banda ciruela del ecosistema y los dos campos fucsia como cortes. Las cabeceras de sección se limitan a 760px.
+Contenedor de 1200px con gutter fluido `clamp(20px, 5vw, 48px)`. Secciones con aire vertical `clamp(64px, 9vw, 120px)`; alternan blanco y marfil, con la banda ciruela del ecosistema y el bloque de alta (ciruela con brillo rosa) como cortes. Las cabeceras de sección se limitan a 760px.
 
 Hero en dos columnas (1.05fr y 0.95fr) con el teléfono a la derecha. El bento usa 12 columnas con baldosas de 7+5 y 5+7. Las listas de rubros, ecosistema y citas van en dos columnas; las funciones y los pasos en tres. El FAQ lleva la cabecera pegada (`sticky`) junto a la lista.
 
@@ -277,13 +278,19 @@ Teléfono dibujado en HTML con marco de 9px en tinta, muesca, y una reserva inte
 Cabecera pegada, blanca al 96% con borde inferior de 1px. Enlaces píldora de 44px; el CTA es una píldora llena en Fucsia de Acción. Bajo 760px se vuelve un desplegable con botón «Menú».
 
 ### Steps and Signup fields
-Secciones con fondo `brand-cta` y texto blanco. Los pasos son círculos blancos numerados unidos por una línea punteada. El alta pone la copia sobre el campo y el formulario en una tarjeta blanca de 32px.
+Los pasos van sobre marfil: círculos ciruela con número dorado y anillo champagne, unidos por una línea punteada dorada. El alta es ciruela con un brillo rosa arriba a la derecha; la copia va en blanco con checks dorados y el formulario en una tarjeta blanca de 32px.
 
 ### Icons
 Un sprite SVG de trazo único (`currentColor`, trazo 1.9 a 2.2, extremos redondeados), usado con `<use>` a 18, 20 o 24px. Sin emoji ni fuentes de iconos.
 
 ### Motion
-Un solo momento autorado: el teléfono y las dos tarjetas flotantes entran con `translate` y fundido (0.9s, `cubic-bezier(0.22, 1, 0.36, 1)`, escalonado 0.5s y 0.85s), declarado dentro de `prefers-reduced-motion: no-preference`. Las transiciones de estado duran 0.2 a 0.25s y bajo `reduce` se reducen a 0.01ms.
+Patrón tomado de aliciasnailstudio.com, en el rosa propio. Todo bajo `prefers-reduced-motion: no-preference` con el estado final visible por defecto (la cabecera pone `<html class="anim">` solo si la visitante no pidió menos movimiento; sin esa clase nada se oculta).
+- **Entrada del hero:** titular, texto, botones y cifras suben en cascada (`float-in`, 1s, 0.12s entre uno y otro); teléfono y tarjetas flotantes entran a 0.5s y 0.85s y luego flotan (`bob`). El óvalo de fondo respira (`morph`, 14s).
+- **Aparición al hacer scroll:** `app.js` marca los bloques con `.reveal` y un `--i` por hermano (tope 5, 90ms) y les da `.is-in` con un `IntersectionObserver`. Dentro de cada baldosa, el chat nocturno, la agenda y «Pago confirmado» entran en secuencia; la línea de los pasos se dibuja (`draw`).
+- **Cifras:** «+350» y «+80» suben desde 0 (1.4s). El texto final ya está en el HTML.
+- **Maqueta del hero:** se reserva sola una vez (día, hora, Reservar) al verse; se detiene si la visitante la toca.
+- **Detalles que llaman a pulsar:** brillo que cruza los botones primarios al pasar el cursor, anillo en el botón de WhatsApp, pulso del sello «15 días gratis», elevación de baldosas y citas, barra de lectura (solo donde hay `animation-timeline: scroll()`).
+Las transiciones de estado duran 0.2 a 0.35s y bajo `reduce` se reducen a 0.01ms. Curva única: `cubic-bezier(0.22, 1, 0.36, 1)`.
 
 ### Fuera del sistema: `alta.html`
 La página corta de alta no usa `styles.css`: lleva su propio `<style>` en línea y comparte con la landing solo `app.js`. Detectores que la comparen contra este documento señalarán su tipografía y tamaños; es esperado.

@@ -226,3 +226,51 @@ demoConfirm?.addEventListener("click", () => {
   demoConfirm.textContent = "Reserva enviada";
   if (demoDone) demoDone.textContent = "Te avisamos 24 h y 1 h antes de tu cita.";
 });
+
+/* ── MOVIMIENTO ── */
+// Patron tomado de aliciasnailstudio.com: aparicion escalonada al entrar en pantalla,
+// contadores que suben y la maqueta de reserva que se juega sola una vez.
+// Todo depende de <html class="anim"> (lo pone la cabecera si no hay prefers-reduced-motion).
+const header = document.querySelector(".site-header");
+addEventListener("scroll", () => header?.classList.toggle("is-scrolled", scrollY > 8), { passive: true });
+
+if (document.documentElement.classList.contains("anim")) {
+  document.querySelectorAll(".t-agenda .agenda li").forEach((li, k) => li.style.setProperty("--k", k));
+
+  const bloques = ".section-head, .before-after li, .tile, .rubros li, .quotes figure, .feat-phone, .feature-col, .eco-list li, .price, .steps li, .faq-list details, .signup-copy, .signup-card";
+  const entrada = new IntersectionObserver((vistos) => {
+    vistos.forEach((v) => {
+      if (!v.isIntersecting) return;
+      v.target.classList.add("is-in");
+      entrada.unobserve(v.target);
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  document.querySelectorAll(bloques).forEach((el) => {
+    el.classList.add("reveal");
+    el.style.setProperty("--i", Math.min([...el.parentElement.children].indexOf(el), 5));
+    entrada.observe(el);
+  });
+
+  document.querySelectorAll("[data-count]").forEach((el) => {
+    const fin = Number(el.dataset.count);
+    const t0 = performance.now() + 300;
+    const paso = (ahora) => {
+      const p = Math.min(Math.max((ahora - t0) / 1400, 0), 1);
+      el.textContent = Math.round(fin * (1 - (1 - p) ** 3));
+      if (p < 1) requestAnimationFrame(paso);
+    };
+    requestAnimationFrame(paso);
+  });
+
+  // La maqueta se reserva sola (dia, hora, Reservar) la primera vez que se ve; si la visitante la toca, se detiene.
+  if (demo) {
+    const jugar = new IntersectionObserver(([v]) => {
+      if (!v.isIntersecting) return;
+      jugar.disconnect();
+      const pasos = ['[data-pick="dia"]:nth-child(3)', '[data-pick="hora"]:nth-child(2)', "#demoConfirm"];
+      const timers = pasos.map((sel, i) => setTimeout(() => demo.querySelector(sel)?.click(), 2400 + i * 1300));
+      demo.addEventListener("pointerdown", () => timers.forEach(clearTimeout), { once: true });
+    }, { threshold: 0.6 });
+    jugar.observe(demo);
+  }
+}

@@ -17,7 +17,7 @@
   <meta name="twitter:title" content="RservasRoma — App de reservas para tu salón">
   <meta name="twitter:description" content="Más de 350 negocios en las 15 provincias de Cuba tienen su app de reservas con RservasRoma: reservas online, anticipos, recordatorios y estadísticas. Incluye RomaFinanzas y RomaCrece. 15 días de prueba gratis.">
   <meta name="twitter:image" content="https://tusalon.github.io/HouseofRservasRoma/icons/icon-512x512.png">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#faf5f1">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="RservasRoma">
@@ -29,6 +29,7 @@
   <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <script>if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) document.documentElement.classList.add("anim");</script>
 </head>
 <body>
 
@@ -87,9 +88,9 @@
                mes y por suscripcion hay 59 activas, 405 en prueba y 3 suspendidas.
                Para refrescarlas, contar de nuevo y redondear a la baja. -->
           <ul class="hero-points" aria-label="Indicadores clave">
-            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><strong>+350 negocios</strong> con su app en las 15 provincias</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><strong>+<span data-count="350">350</span> negocios</strong> con su app en las 15 provincias</span></li>
             <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Lista en 24–72 h</strong>, sin instalar nada</span></li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><strong>+80 con reservas</strong> este mes</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span><strong>+<span data-count="80">80</span> con reservas</strong> este mes</span></li>
           </ul>
         </div>
 
@@ -451,7 +452,7 @@
     </section>
 
     <!-- CÓMO EMPIEZA -->
-    <section class="section on-brand" id="como-empieza">
+    <section class="section alt" id="como-empieza">
       <div class="wrap">
         <div class="section-head">
           <h2>Así empiezas, sin complicarte.</h2>
