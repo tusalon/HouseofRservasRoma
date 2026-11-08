@@ -48,6 +48,27 @@ window.telefonoConPais = function (codigo, valor) {
   return `+${codigo} ${solo}`;
 };
 // "Otro pais": sin codigo el numero no sirve, asi que el navegador exige que empiece por "+".
+// Toda América (los del Caribe con código +1 comparten prefijo con EE. UU.) y España.
+// Cuba va primero porque es la mayoría; "Otro país" al final para el resto del mundo.
+const PAISES_AMERICA = [
+  ["Antigua y Barbuda", "1"], ["Argentina", "54"], ["Aruba", "297"], ["Bahamas", "1"], ["Barbados", "1"],
+  ["Belice", "501"], ["Bermudas", "1"], ["Bolivia", "591"], ["Brasil", "55"], ["Canadá", "1"],
+  ["Chile", "56"], ["Colombia", "57"], ["Costa Rica", "506"], ["Curazao", "599"], ["Dominica", "1"],
+  ["Ecuador", "593"], ["El Salvador", "503"], ["Granada", "1"], ["Guadalupe", "590"], ["Guatemala", "502"],
+  ["Guayana Francesa", "594"], ["Guyana", "592"], ["Haití", "509"], ["Honduras", "504"], ["Islas Caimán", "1"],
+  ["Jamaica", "1"], ["Martinica", "596"], ["Nicaragua", "505"], ["Panamá", "507"], ["Paraguay", "595"],
+  ["Perú", "51"], ["Puerto Rico", "1"], ["R. Dominicana", "1"], ["San Cristóbal y Nieves", "1"],
+  ["San Vicente", "1"], ["Santa Lucía", "1"], ["Surinam", "597"], ["Trinidad y Tobago", "1"], ["Uruguay", "598"],
+  ["Venezuela", "58"]
+].sort((a, b) => a[0].localeCompare(b[0], "es"));
+const PAISES_SELECTOR = [["Cuba", "53"], ["EE. UU.", "1"], ["México", "52"], ["España", "34"], ...PAISES_AMERICA];
+window.llenarPaises = function (select) {
+  if (!select) return;
+  select.innerHTML = PAISES_SELECTOR.map(([n, c]) => `<option value="${c}">${n} +${c}</option>`).join("") +
+    '<option value="otro">Otro país</option>';
+};
+window.llenarPaises(document.querySelector("#pais"));
+
 window.activarSelectorPais = function (select, input) {
   if (!select || !input) return;
   const ajustar = () => {

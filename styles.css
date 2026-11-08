@@ -384,7 +384,7 @@ p { text-wrap: pretty; }
 .contact-form[hidden], .thanks[hidden] { display: none; }
 .field { display: grid; gap: 8px; }
 .field label, .field .label { font-weight: 700; font-size: 0.9375rem; }
-.tel-row { display: grid; grid-template-columns: minmax(124px, 36%) 1fr; gap: 8px; }
+.tel-row { display: grid; grid-template-columns: minmax(140px, 40%) 1fr; gap: 8px; }
 .tel-row select { min-width: 0; }
 .field select { min-height: 52px; padding: 12px 12px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--wash); font-weight: 600; transition: border-color 0.2s, background-color 0.2s; }
 .field select:hover { border-color: #e0c8d5; }
