@@ -34,6 +34,33 @@ window.guardarSolicitudRservas = function (datos) {
   });
 };
 
+// Une el pais elegido con el numero: "+53 55512345". Si ella ya escribio el "+" o
+// el "00" se respeta lo que puso; si repitio el codigo sin "+" (53 55512345) se quita
+// para que no quede duplicado. Asi la tabla guarda siempre el codigo y el panel no adivina.
+const LARGO_NACIONAL = { "53": 8, "1": 10, "34": 9, "52": 10 };
+window.telefonoConPais = function (codigo, valor) {
+  const crudo = String(valor || "").trim();
+  if (/^(\+|00)/.test(crudo)) return "+" + crudo.replace(/^(\+|00)/, "").replace(/\D/g, "");
+  let solo = crudo.replace(/\D/g, "");
+  if (!solo) return "";
+  if (!/^\d+$/.test(codigo)) return crudo; // "Otro país" sin "+": se deja tal cual, no se inventa un código
+  if (solo.startsWith(codigo) && solo.length === codigo.length + (LARGO_NACIONAL[codigo] || -99)) solo = solo.slice(codigo.length);
+  return `+${codigo} ${solo}`;
+};
+// "Otro pais": sin codigo el numero no sirve, asi que el navegador exige que empiece por "+".
+window.activarSelectorPais = function (select, input) {
+  if (!select || !input) return;
+  const ajustar = () => {
+    const otro = select.value === "otro";
+    input.placeholder = otro ? "+593 99 123 4567" : select.value === "53" ? "5 123 4567" : "Tu número";
+    if (otro) { input.pattern = "\\+.*"; input.title = "Escribe el número con su código de país, por ejemplo +593…"; }
+    else { input.removeAttribute("pattern"); input.removeAttribute("title"); }
+  };
+  select.addEventListener("change", ajustar);
+  ajustar();
+};
+window.activarSelectorPais(document.querySelector("#pais"), document.querySelector("#whatsapp"));
+
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 const installButton = document.querySelector("#installButton");
@@ -106,7 +133,7 @@ function buildRequestText() {
     "Solicitud para crear cliente en RservasRoma",
     "",
     `Nombre del salón: ${data.get("salon") || ""}`,
-    `WhatsApp: ${data.get("whatsapp") || ""}`,
+    `WhatsApp: ${window.telefonoConPais(data.get("pais") || "53", data.get("whatsapp"))}`,
     `Correo electrónico: ${data.get("email") || ""}`,
     `Sistema operativo: ${data.get("plataforma") || ""}`
   ];
@@ -157,7 +184,7 @@ form?.addEventListener("submit", (event) => {
   // gesto del click, que es lo que el navegador exige para no bloquearlo.
   const guardado = window.guardarSolicitudRservas({
     salon: data.get("salon"),
-    whatsapp: data.get("whatsapp"),
+    whatsapp: window.telefonoConPais(data.get("pais") || "53", data.get("whatsapp")),
     email: data.get("email"),
     plataforma: data.get("plataforma"),
     origen: "landing",

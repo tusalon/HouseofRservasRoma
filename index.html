@@ -558,7 +558,16 @@
             </div>
             <div class="field">
               <label for="whatsapp">WhatsApp</label>
-              <input id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="+53 5..." autocomplete="tel">
+              <div class="tel-row">
+                <select id="pais" name="pais" aria-label="País del WhatsApp">
+                  <option value="53">Cuba +53</option>
+                  <option value="1">EE. UU. +1</option>
+                  <option value="34">España +34</option>
+                  <option value="52">México +52</option>
+                  <option value="otro">Otro país</option>
+                </select>
+                <input id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="5 123 4567" autocomplete="tel-national">
+              </div>
             </div>
             <div class="field">
               <label for="email">Correo electrónico</label>
